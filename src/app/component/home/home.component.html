@@ -26,7 +26,8 @@
                 <h2 class="elementor-heading">What Our Customers Say</h2>
             </div>
             <div class="elementor-widget-container">
-                <div class="elementor-customer-wrapper" *ngFor="let customer of customers">
+                <div class="elementor-customer-wrapper" *ngFor="let customer of customers;let i = index;"
+                [ngClass]="'elementor-custom-responsive-'+i">
                     <div class="elementor-icon-wrapper">
                         <div class="elementor-icon"><i class="bi bi-quote"></i></div>
                     </div>

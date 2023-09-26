@@ -60,3 +60,11 @@
         }
     }
 }
+@media screen and (max-width: 426px) {
+    .widget-wrap-products{
+        .products{
+            grid-template-columns: none !important;
+            grid-template-rows: repeat(3,minmax(0,1fr));
+        }
+    }
+}

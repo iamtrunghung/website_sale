@@ -6,6 +6,7 @@
         width: 80%;
         height: 100px;
         margin: auto;
+        position: relative;
 
         .logo {
             text-transform: uppercase;
@@ -15,22 +16,122 @@
             letter-spacing: 2.5px;
         }
 
-        .list-menu {
+        .site-header-right {
             display: flex;
             align-items: center;
             gap: 20px;
-            list-style-type: none;
-            .menu-item {
-                text-transform: uppercase;
-                font-size: 17px;
-                letter-spacing: 1.5px;
-                font-family: 'Roboto', sans-serif;
-                font-weight: 400;
-                cursor: pointer;
-                .bi{
-                    font-size: 23px;
+
+            .list-menu {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                list-style-type: none;
+                margin: 0;
+
+                .menu-item {
+                    text-transform: uppercase;
+                    font-size: 17px;
+                    letter-spacing: 1.5px;
+                    font-family: 'Roboto', sans-serif;
+                    font-weight: 400;
+                    cursor: pointer;
                 }
             }
+
+            .header-woo-cart,
+            .header-account {
+                font-size: 23px;
+
+                span {
+                    display: flex;
+                }
+            }
+
+            .header-menu-hambuger {
+                display: flex;
+                font-size: 14px;
+                padding: 10px;
+                background: #000000;
+                color: white;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        padding: 20px !important;
+        margin: 0 !important;
+        max-width: 100%;
+        width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        border-bottom: 1px solid #d9d9d9;
+        height: 90px !important;
+    }
+
+    .open-list-menu {
+        position: absolute;
+        top: 90px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        padding: 0;
+        align-items: flex-start !important;
+        gap: 0 !important;
+        opacity: 1;
+        visibility: visible;
+        transition: 0.5s all ease;
+
+        .menu-item {
+            width: 100%;
+            font-size: 17px !important;
+            padding: 8px 20px;
+            border-bottom: 1px solid #d9d9d9;
+            background: white;
+        }
+    }
+
+    .close-list-menu {
+        position: absolute;
+        top: 90px;
+        left: -800px;
+        width: 100%;
+        flex-direction: column;
+        padding: 0;
+        align-items: flex-start !important;
+        gap: 0 !important;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.5s all ease;
+
+        .menu-item {
+            width: 100%;
+            font-size: 17px !important;
+            padding: 8px 20px;
+            border-bottom: 1px solid #d9d9d9;
+            background: white;
+        }
+    }
+
+    .header-account {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .logo {
+        font-size: 17px !important;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .open-list-menu {
+        .menu-item {
+            font-size: 14px !important;
         }
     }
 }

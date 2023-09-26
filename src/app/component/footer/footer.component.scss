@@ -29,3 +29,16 @@
         }
     }
 }
+@media screen and (max-width: 768px){
+    .container{
+        grid-template-columns: none !important;
+        grid-template-rows: repeat(3,minmax(0,1fr));
+        justify-content: center;
+        .list-menu{
+            justify-content: center;
+        }
+        .side-footer-left{
+            padding: 20px 0 !important;
+        }
+    }
+}

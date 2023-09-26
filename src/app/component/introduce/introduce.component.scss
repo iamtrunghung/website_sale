@@ -50,3 +50,19 @@
         }
     }
 }
+@media screen and (max-width: 426px) {
+    .elementor-wrapper{
+        height: 400px !important;
+    }
+    .elementor-heading{
+        font-size: 30px !important;
+        text-align: center;
+        letter-spacing: 3px !important;
+    }
+    .elementor-context{
+        font-size: 14px !important;
+    }
+    .elementor-purchase{
+        font-size: 14px !important;
+    }
+}

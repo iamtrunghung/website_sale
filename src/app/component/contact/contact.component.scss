@@ -1,0 +1,150 @@
+.banner-contact {
+    width: 100%;
+    min-height: 500px;
+    background-image: url(https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/10/Contact-Banner.jpg);
+    background-position: bottom center;
+    background-size: cover;
+
+    .elementor-widget-heading {
+        width: 100%;
+        min-height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .elementor-heading-title {
+            color: var(--e-global-color-astglobalcolor1);
+            font-size: 70px;
+            text-transform: uppercase;
+            line-height: 1em;
+            letter-spacing: 10px;
+        }
+    }
+}
+
+.area-send-form {
+    padding: 125px 0;
+
+    .elementor-widget-form {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 10px;
+
+        .elementor-widget-contact {
+            flex-basis: 50%;
+
+            .elementor-heading {
+                margin-bottom: 40px;
+
+                .elementor-heading-title {
+                    font-size: 36px;
+                }
+            }
+
+            .elementor-widget-form {
+                box-shadow: rgba(174, 174, 178, 0.2) 0px 7px 29px 0px;
+                .elementor-form {
+                    padding: 20px;
+                    width: 100%;
+
+                    .elementor-input-form {
+                        width: 100%;
+                        margin-bottom: 15px;
+
+                        .elementor-input-fill {
+                            width: 100%;
+                            font-size: 17px;
+                            border: 1px solid #b1ca9c;
+                            background: #f6f4f4;
+                            border-radius: 3px;
+                            padding: 12px;
+                            transition: 0.3s all ease-in;
+
+                            &:focus {
+                                border: none;
+                                outline: none;
+                                background: white;
+                                transition: 0.3s all ease-in;
+                            }
+                        }
+                    }
+
+                    .elementor-button-apply {
+                        border: none;
+                        padding: 8px 18px;
+                        outline: none;
+                        background: #74A84A;
+                        color: white;
+                        font-size: 15px;
+                        text-transform: uppercase;
+                        letter-spacing: 2px;
+                        font-weight: 500;
+                    }
+                }
+            }
+
+            .elementor-wrap {
+                padding: 10px 10px 10px 70px;
+
+                .elementor-widget-view-default {
+                    .elementor-box-view {
+                        display: flex;
+                        gap: 15px;
+                        padding: 8px 0;
+                        margin-bottom: 20px;
+                        .elementor-box-icon {
+                            padding: 0 12px;
+                            border: 1px solid #74A84A;
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            height: 42px;
+
+                            span {
+                                font-size: 17px;
+                            }
+                        }
+
+                        .elementor-box-content {
+                            .elementor-title-content {
+                                font-size: 17px;
+                                color: #575757;
+                                text-transform: uppercase;
+                                margin: 0;
+                            }
+
+                            .elementor-text-content {
+                                font-weight: 500;
+                                font-size: 20px;
+                                color: #3b3a3a;
+                            }
+                        }
+                    }
+                }
+
+                .elementor-widget-social {
+                    margin-left: 55px;
+
+                    .elementor-title-social {
+                        font-size: 20px;
+                        font-weight: 500;
+                    }
+
+                    .elementor-icon-social {
+                        cursor: pointer;
+                        span {
+                            font-size: 17px;
+                            padding: 10px;
+                            background: #74A84A;
+                            color: white;
+                            border-radius: 50px;
+                            margin-right: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
