@@ -1,0 +1,76 @@
+<app-header></app-header>
+<section class="area-shop">
+    <div class="elementor-widget-container container">
+        <div class="widget-area-secondary">
+            <div class="elementor-filter">
+                <div class="elementor-search-name">
+                    <div class="elementor-fill">
+                        <input nz-input placeholder="search product..." nzSize="large" />
+                    </div>
+                    <button class="elementor-find">
+                        <span nz-icon nzType="search" nzTheme="outline"></span>
+                    </button>
+                </div>
+                <div class="elementor-filter-price">
+                    <h3 class="elementor-title">Filter by price</h3>
+                    <nz-slider nzRange></nz-slider>
+                    <div class="elementor-price">
+                        <nz-input-number style="width: 50px;height:40px;margin-right: 15px;"></nz-input-number>
+                        <nz-input-number style="width: 50px;height:40px"></nz-input-number>
+                    </div>
+                </div>
+                <div class="elementor-filter-categories">
+                    <h2 class="elementor-title">Categories</h2>
+                    <ul class="categories-list">
+                        <li class="elementor-type-category">
+                            <span style="color: #74a84a;">Postcards</span><span> (6)</span>
+                        </li>
+                        <li class="elementor-type-category">
+                            <span style="color: #74a84a;">Posters</span><span> (6)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="widget-area-primary">
+            <div class="area-show-product">
+                <nav class="area-direction">
+                    <span>Home</span> / Shop
+                </nav>
+                <div class="widget-title-shop">
+                    <h1 class="widget-title">Shop</h1>
+                </div>
+                <div class="widget-notices">
+                    <div class="widget-result-count">
+                        <span>Showing all 12 results</span>
+                    </div>
+                    <div class="widget-ordering">
+                        <nz-select ngModel="lucy" style="width: 170px;">
+                            <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
+                            <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+                            <nz-option nzValue="disabled" nzLabel="Disabled" nzDisabled></nz-option>
+                          </nz-select>
+                    </div>
+                </div>
+                <ul class="products">
+                    <li class="product" *ngFor="let product of products">
+                        <div class="product-image">
+                            <img [src]="product.image" [alt]="product.name">
+                            <span class="thumbnail-cart" nz-tooltip nzTooltipTitle="Thêm vào giỏ" nzTooltipColor="green" nzTooltipPlacement="left" nz-icon nzType="shopping-cart" nzTheme="outline"></span>
+                        </div>
+                        <div class="product-category">
+                            <p class="name-category">{{product.category}}</p>
+                        </div>
+                        <div class="product-name">
+                            <p class="name-product">{{product.name}}</p>
+                        </div>
+                        <div class="product-price">
+                            <p class="price-product">${{product.price}}</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

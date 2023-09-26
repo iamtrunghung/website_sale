@@ -1,0 +1,79 @@
+<div class="wrapper">
+    <div class="banner-home">
+        <app-header></app-header>
+        <div class="widget-heading container">
+            <div class="elementor-widget-container">
+                <h1 class="heading-title">Earth</h1>
+            </div>
+            <div class="elementor-widget-container">
+                <h2 class="heading-sub-title">MULTIPURPOSE STORE</h2>
+            </div>
+            <div class="elementor-widget-container">
+                <div class="element-button-wrapper">
+                    <button class="widget-button-link">
+                        <span>SHOP NOW</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="area-product-feature">
+        <app-product-feature></app-product-feature>
+    </section>
+    <section class="area-customer-review">
+        <div class="elementor-widget-wrap container">
+            <div class="elementor-widget-heading">
+                <h2 class="elementor-heading">What Our Customers Say</h2>
+            </div>
+            <div class="elementor-widget-container">
+                <div class="elementor-customer-wrapper" *ngFor="let customer of customers">
+                    <div class="elementor-icon-wrapper">
+                        <div class="elementor-icon"><i class="bi bi-quote"></i></div>
+                    </div>
+                    <div class="elementor-context-wrapper">
+                        <span class="elementor-context">
+                            {{customer.context}}
+                        </span>
+                    </div>
+                    <div class="elementor-avatar-wrapper">
+                        <div class="elementor-avatar">
+                            <img [src]="customer.avatar" [alt]="customer.name">
+                        </div>
+                    </div>
+                    <div class="elementor-name-wrapper">
+                        <span class="elementor-name">
+                            {{customer.name}}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="area-introduce">
+        <app-introduce></app-introduce>
+    </section>
+    <div class="area-policy">
+        <div class="elementor-wrapper-policy">
+            <div class="elementor-widget-policy container">
+                <div class="elementor-widget-wrap">
+                    <div class="elementor-widget-container" *ngFor="let policy of policies">
+                        <div class="elementor-box">
+                            <div class="elementor-icon-box">
+                                <span class="elementor-icon" nz-icon [nzType]="policy.icon" nzTheme="outline"></span>
+                            </div>
+                            <div class="elementor-widget-content">
+                                <div class="elementor-widget-title">
+                                    <span class="elementor-title">{{policy.title}}</span>
+                                </div>
+                                <div class="elementor-widget-text">
+                                    <span class="elementor-text">{{policy.text}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>

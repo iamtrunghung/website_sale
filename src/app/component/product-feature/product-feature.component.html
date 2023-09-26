@@ -1,0 +1,19 @@
+<div class="product-feature">
+    <div class="container">
+        <div class="widget-wrap-products">
+            <ul class="products">
+                <li class="product-item" *ngFor="let product of productFeatures">
+                    <div class="thumbnail-wrap">
+                        <img class="thumbnail-img" [src]="product.image" [alt]="product.name" loading="lazy">
+                        <span class="thumbnail-cart" nz-tooltip nzTooltipTitle="Thêm vào giỏ" nzTooltipColor="green" nzTooltipPlacement="left" nz-icon nzType="shopping-cart" nzTheme="outline"></span>
+                    </div>
+                    <div class="summary-wrap">
+                        <span class="product-category">{{product.category}}</span>
+                        <h2 class="product-name">{{product.name}}</h2>
+                        <div class="product-price">$ {{product.price | currency:'':'':'1.2-2'}}</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

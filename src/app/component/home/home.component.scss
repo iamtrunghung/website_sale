@@ -1,0 +1,183 @@
+.wrapper {
+    width: 100%;
+    height: 100%;
+
+    .banner-home {
+        width: 100%;
+        height: 720px;
+        background-image: url(https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/10/Banner.jpg);
+        background-position: center right;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    .widget-heading {
+        display: grid;
+        align-items: center;
+        text-align: center;
+        padding: 200px 0;
+
+        h1.heading-title {
+            color: var(--e-global-color-astglobalcolor1);
+            font-size: 80px;
+            text-transform: uppercase;
+            line-height: 1em;
+            letter-spacing: 10px;
+        }
+
+        h2.heading-sub-title {
+            color: #050505;
+            font-size: 40px;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 6.3px;
+        }
+
+        .element-button-wrapper {
+            width: 100%;
+            margin: 25px 0 0;
+
+            .widget-button-link {
+                font-weight: 400;
+                text-transform: uppercase;
+                padding: 15px 40px;
+                border: 1px solid var(--ast-global-color-2);
+                background-color: var(--ast-global-color-2);
+                outline: none;
+
+                span {
+                    color: white;
+                    letter-spacing: 5px;
+                }
+            }
+        }
+    }
+
+    .area-product-feature {
+        margin-top: 80px;
+    }
+
+    .area-customer-review {
+        width: 100%;
+        padding: 80px 0;
+        border-width: 1px 0 0;
+        border-style: solid;
+        border-color: #eae9ce;
+        margin-top: 80px;
+        .elementor-widget-wrap {
+            padding: 20px;
+
+            .elementor-widget-heading {
+                width: 100%;
+                margin-bottom: 20px;
+
+                .elementor-heading {
+                    margin: 0;
+                    font-size: 42px;
+                }
+            }
+
+            .elementor-widget-container {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                grid-gap: 10px;
+                text-align: left;
+
+                .elementor-customer-wrapper {
+                    display: flex;
+                    align-items: flex-start;
+                    padding: 0 70px 0 0;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+
+                    .elementor-icon-wrapper {
+                        .elementor-icon {
+                            font-size: 40px;
+                            color: var(--e-global-color-astglobalcolor1);
+                        }
+                    }
+
+                    .elementor-context-wrapper {
+                        margin-bottom: 20px;
+
+                        .elementor-context {
+                            line-height: 1.5;
+                            font-size: 17px;
+                        }
+                    }
+
+                    .elementor-avatar-wrapper {
+                        margin-bottom: 20px;
+
+                        .elementor-avatar>img {
+                            border-radius: 50px;
+                            object-fit: contain;
+                        }
+                    }
+
+                    .elementor-name-wrapper {
+                        .elementor-name {
+                            color: var(--e-global-color-astglobalcolor0);
+                            font-size: 12px;
+                            font-weight: 700;
+                            text-transform: uppercase;
+                            letter-spacing: 2px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .area-policy{
+        .elementor-wrapper-policy{
+            width: 100%;
+            border-bottom: 1px solid #eae9ce;
+            padding: 50px 0;
+            .elementor-widget-wrap{
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                
+                .elementor-widget-container{
+                    width: 30%;
+                    max-width: 30%;
+                    padding: 0 48px 0 0;
+                    border-right: 1px solid #eae9ce;
+                    .elementor-box{
+                        @extend .elementor-widget-wrap;
+                        .elementor-icon-box{
+                            background-color: #2b5b04;
+                            fill: white;
+                            border-radius: 50px;
+                            margin-right: 15px;
+                            .elementor-icon{
+                                color: white;
+                                font-size: 16px;
+                                padding: 12px;
+                            }
+                        }
+                        .elementor-widget-content{
+                            margin-bottom: 10px;
+                            .elementor-widget-title{
+                                width: 100%;
+                                font-size: 15px;
+                                font-weight: 500;
+                                font-family: 'jost', sans-serif;
+                                letter-spacing: 3px;
+                            }
+                        }
+                        .elementor-widget-text{
+                            .elementor-text{
+                                color: #575757;
+                            }
+                        }
+                    }
+                    &:last-child{
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+}

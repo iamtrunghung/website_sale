@@ -1,0 +1,168 @@
+.area-shop {
+    width: 100%;
+    border-top: 1px solid #eae9ce;
+
+    .elementor-widget-container {
+        display: grid;
+        grid-template-columns: 30% 70%;
+        height: 100%;
+        padding: 70px 0;
+
+        .widget-area-secondary {
+            width: 100%;
+            height: 100%;
+            border-right: 1px solid #eae9ce;
+
+            .elementor-filter {
+                height: 100%;
+                padding-right: 60px;
+
+                .elementor-search-name {
+                    display: flex;
+                    align-items: center;
+                    gap: 25px;
+                    margin-bottom: 40px;
+
+                    .elementor-find {
+                        display: flex;
+                        padding: 12px 15px;
+                        border: none;
+                        outline: none;
+                        background: #74A84A;
+                        color: white;
+                    }
+                }
+
+                .elementor-filter-price {
+                    margin-bottom: 40px;
+
+                    .elementor-title {
+                        color: #74A84A;
+                        font-size: 20px;
+                    }
+
+                    .elementor-price {
+                        text-align: right;
+                    }
+                }
+
+                .elementor-filter-categories {
+                    .elementor-title {
+                        color: #74A84A;
+                        font-size: 20px;
+                    }
+
+                    .categories-list {
+                        list-style: none;
+                        padding-left: 15px;
+
+                        .elementor-type-category {
+                            font-size: 17px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .widget-area-primary {
+            width: 100%;
+            height: 100%;
+
+            .area-show-product {
+                padding-left: 60px;
+
+                .area-direction {
+                    margin-bottom: 20px;
+                    font-size: 17px;
+                    color: #575757;
+                }
+
+                .widget-title-shop {
+                    margin-bottom: 70px;
+
+                    .widget-title {
+                        color: #74A84A;
+                        font-size: 70px;
+                        font-weight: 400;
+                        font-family: 'jost', sans-serif;
+                    }
+                }
+
+                .widget-notices {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 25px;
+
+                    .widget-result-count {
+                        font-size: 17px;
+                        color: #575757;
+                    }
+                }
+
+                .products {
+                    list-style-type: none;
+                    padding: 0;
+                    display: grid;
+                    grid-template-columns: repeat(3, minmax(0, 1fr));
+                    grid-gap: 10px;
+                    .product-image {
+                        margin-bottom: 10px;
+                        position: relative;
+                        cursor: pointer;
+                        img {
+                            width: 100%;
+                        }
+
+                        .thumbnail-cart {
+                            position: absolute;
+                            top: 20px;
+                            right: 15px;
+                            font-size: 20px;
+                            padding: 8px;
+                            border-radius: 50px;
+                            background: rgba(255, 255, 255, 0.893);
+                            color: rgba(116, 168, 74, 0.893);
+                            opacity: 0;
+                            transition: 0.3s all ease;
+
+                            &:hover {
+                                background: rgba(255, 255, 255);
+                                color: rgba(116, 168, 74);
+                            }
+                        }
+
+                        &:hover>.thumbnail-cart {
+                            opacity: 1;
+                            transition: 0.3s all ease;
+                        }
+                    }
+
+                    .product-category {
+                        .name-category {
+                            color: #878686;
+                            font-size: 15px;
+                        }
+                    }
+
+                    .product-name {
+                        .name-product {
+                            font-size: 17px;
+                            color: #000000;
+                            margin: 0;
+                            font-weight: 500;
+                        }
+                    }
+
+                    .product-price {
+                        .price-product {
+                            font-size: 17px;
+                            color: #666666;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
