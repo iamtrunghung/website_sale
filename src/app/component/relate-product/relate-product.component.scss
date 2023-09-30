@@ -1,0 +1,31 @@
+// product relate
+.elementor-widget-relate{
+    cursor: pointer;
+    .elementor-title{
+        font-size: 30px;
+    }
+    .elementor-list-relate{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        .elementor-widget-box{
+            .elementor-widget-image > .elementor-image{
+                width: 200px;
+                height: 100%;
+            }
+            .elementor-category-product{
+                font-size: 15px;
+                color: #848484;
+            }
+            .elementor-name-product{
+                font-size: 17px;
+                color: #000000;
+            }
+            .elementor-price-product{
+                font-size: 17px;
+                color: #595959;
+                font-weight: 500;
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+<div class="elementor-widget-relate container">
+    <h2 class="elementor-title">Related product</h2>
+    <div class="elementor-list-relate">
+        <div class="elementor-widget-box" *ngFor="let product of productsRelate">
+            <a href="/chi-tiet-san-pham/{{product.id}}">
+                <figure class="elementor-widget-image">
+                    <img [src]="product.images[0]" [alt]="product.title" class="elementor-image">
+                </figure>
+                <p class="elementor-category-product">{{product.category.name}}</p>
+                <h3 class="elementor-name-product">{{product.title}}</h3>
+                <p class="elementor-price-product">$ {{product.price}}</p>
+            </a>
+        </div>
+    </div>
+</div>

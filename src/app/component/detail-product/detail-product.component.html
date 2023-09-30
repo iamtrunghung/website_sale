@@ -1,0 +1,30 @@
+<app-header></app-header>
+<section class="area-detail-product">
+    <div class="elementor-widget-detail">
+        <div class="elementor-widget-contain container">
+            <figure class="elementor-widget-image-detail"
+                [ngStyle]="{'background-image':' url(' + product?.images[0] + ')'}" (mousemove)="zoomImage($event)">
+                <img [src]="product?.images[0]" alt="" class="elementor-image-detail">
+            </figure>
+            <div class="elementor-widget-summary-detail">
+                <p class="elementor-back-to-page">Home / {{product.category?.name}} / {{product.title}}</p>
+                <p class="elementor-category-product">Category: {{product.category?.name}}</p>
+                <h2 class="elementor-name-product">{{product.title}}</h2>
+                <p class="elementor-price-product">$ {{product.price}}</p>
+                <p class="elementor-short-description">{{product.description}}</p>
+                <div class="elementor-add-to-cart">
+                    <div class="elementor-quantity">
+                        <button class="elementor-button-quantity" (click)="decrease()">-</button>
+                        <input type="number" [(ngModel)]="valueQuantity" class="elementor-quantity-fill">
+                        <button class="elementor-button-quantity" (click)="increase()">+</button>
+                    </div>
+                    <button class="button-add-to-cart">Add to cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="area-product-relate">
+    <app-relate-product [product]="product"></app-relate-product>
+</section>
+<app-footer></app-footer>

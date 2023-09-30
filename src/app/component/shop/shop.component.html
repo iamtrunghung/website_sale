@@ -53,16 +53,16 @@
                     </div>
                 </div>
                 <ul class="products">
-                    <li class="product" *ngFor="let product of products">
+                    <li class="product" *ngFor="let product of products" (click)="viewDetailProduct(product.id)">
                         <div class="product-image">
-                            <img [src]="product.image" [alt]="product.name">
+                            <img [src]="product.images[0]" [alt]="product.title">
                             <span class="thumbnail-cart" nz-tooltip nzTooltipTitle="Thêm vào giỏ" nzTooltipColor="green" nzTooltipPlacement="left" nz-icon nzType="shopping-cart" nzTheme="outline"></span>
                         </div>
                         <div class="product-category">
-                            <p class="name-category">{{product.category}}</p>
+                            <p class="name-category">{{product.category.name}}</p>
                         </div>
                         <div class="product-name">
-                            <p class="name-product">{{product.name}}</p>
+                            <p class="name-product">{{product.title}}</p>
                         </div>
                         <div class="product-price">
                             <p class="price-product">${{product.price}}</p>

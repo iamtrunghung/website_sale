@@ -48,7 +48,7 @@
             }
 
             .header-menu-hambuger {
-                display: flex;
+                display: none;
                 font-size: 14px;
                 padding: 10px;
                 background: #000000;
@@ -72,7 +72,9 @@
         border-bottom: 1px solid #d9d9d9;
         height: 90px !important;
     }
-
+    .header-menu-hambuger{
+        display: flex !important;
+    }
     .open-list-menu {
         position: absolute;
         top: 90px;

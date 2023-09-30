@@ -19,7 +19,8 @@ import { HomeComponent } from './component/home/home.component';
 import { IntroduceComponent } from './component/introduce/introduce.component';
 import { ProductFeatureComponent } from './component/product-feature/product-feature.component';
 import { ShopComponent } from './component/shop/shop.component';
-
+import { DetailProductComponent } from './component/detail-product/detail-product.component';
+import { RelateProductComponent } from './component/relate-product/relate-product.component';
 registerLocaleData(vi);
 
 @NgModule({
@@ -32,7 +33,9 @@ registerLocaleData(vi);
     HomeComponent,
     IntroduceComponent,
     ProductFeatureComponent,
-    ShopComponent
+    ShopComponent,
+    DetailProductComponent,
+    RelateProductComponent
   ],
   imports: [
     BrowserModule,

@@ -106,10 +106,10 @@
                     display: grid;
                     grid-template-columns: repeat(3, minmax(0, 1fr));
                     grid-gap: 10px;
+                    cursor: pointer;
                     .product-image {
                         margin-bottom: 10px;
                         position: relative;
-                        cursor: pointer;
                         img {
                             width: 100%;
                         }
