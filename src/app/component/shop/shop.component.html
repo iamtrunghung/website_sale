@@ -5,7 +5,8 @@
             <div class="elementor-filter">
                 <div class="elementor-search-name">
                     <div class="elementor-fill">
-                        <input nz-input placeholder="search product..." nzSize="large" />
+                        <input nz-input placeholder="search product..." nzSize="large" [(ngModel)]="keySearch"
+                            (ngModelChange)="handleSearchProduct(keySearch)" />
                     </div>
                     <button class="elementor-find">
                         <span nz-icon nzType="search" nzTheme="outline"></span>
@@ -13,10 +14,19 @@
                 </div>
                 <div class="elementor-filter-price">
                     <h3 class="elementor-title">Filter by price</h3>
-                    <nz-slider nzRange></nz-slider>
+                    <nz-slider nzRange [(ngModel)]="valueRangePrice"
+                        (ngModelChange)="handleSearchPrice(valueRangePrice)" [nzMin]="0" [nzMax]="1000"></nz-slider>
                     <div class="elementor-price">
-                        <nz-input-number style="width: 50px;height:40px;margin-right: 15px;"></nz-input-number>
-                        <nz-input-number style="width: 50px;height:40px"></nz-input-number>
+                        <nz-input-number [(ngModel)]="valueRangePrice[0]" [nzMin]="0" [nzMax]="1000" style="width: 80px;height:40px;margin-right: 15px;font-size: 17px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-end;" [nzFormatter]="formatterDollar"
+                            [nzParser]="parserDollar"></nz-input-number>
+                        <nz-input-number [(ngModel)]="valueRangePrice[1]" [nzMin]="0" [nzMax]="1000"
+                            [nzFormatter]="formatterDollar" [nzParser]="parserDollar" style="width: 80px;height:40px;font-size: 17px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-end;"></nz-input-number>
                     </div>
                 </div>
                 <div class="elementor-filter-categories">
@@ -42,21 +52,22 @@
                 </div>
                 <div class="widget-notices">
                     <div class="widget-result-count">
-                        <span>Showing all 12 results</span>
+                        <span>Showing all {{products.length}} results</span>
                     </div>
                     <div class="widget-ordering">
-                        <nz-select ngModel="lucy" style="width: 170px;">
-                            <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
-                            <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
-                            <nz-option nzValue="disabled" nzLabel="Disabled" nzDisabled></nz-option>
-                          </nz-select>
+                        <nz-select [(ngModel)]="optionSelected" (ngModelChange)="handleSortProduct(optionSelected)"
+                            style="width: 170px;" nzPlaceHolder="Sort price product">
+                            <nz-option *ngFor="let option of sortProducts" [nzValue]="option.name"
+                                [nzLabel]="option.name"></nz-option>
+                        </nz-select>
                     </div>
                 </div>
                 <ul class="products">
                     <li class="product" *ngFor="let product of products" (click)="viewDetailProduct(product.id)">
                         <div class="product-image">
                             <img [src]="product.images[0]" [alt]="product.title">
-                            <span class="thumbnail-cart" nz-tooltip nzTooltipTitle="Thêm vào giỏ" nzTooltipColor="green" nzTooltipPlacement="left" nz-icon nzType="shopping-cart" nzTheme="outline"></span>
+                            <span class="thumbnail-cart" nz-tooltip nzTooltipTitle="Thêm vào giỏ" nzTooltipColor="green"
+                                nzTooltipPlacement="left" nz-icon nzType="shopping-cart" nzTheme="outline"></span>
                         </div>
                         <div class="product-category">
                             <p class="name-category">{{product.category.name}}</p>
