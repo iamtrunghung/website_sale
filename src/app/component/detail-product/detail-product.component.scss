@@ -20,6 +20,7 @@
                 height: 100%;
                 transition: opacity .5s;
                 display: block;
+
                 &:hover {
                     opacity: 0;
                 }
@@ -63,26 +64,32 @@
 
                 .elementor-quantity {
                     flex-basis: 25%;
+                    display: flex;
+                    overflow: hidden;
+                    width: 55%;
 
                     .elementor-quantity-fill {
-                        border-top: 1px solid #eae9ce;
-                        border-bottom: 1px solid #eae9ce;
+                        border-top: 1px solid #74A84A;
+                        border-bottom: 1px solid #74A84A;
                         border-left: none;
                         border-right: none;
-                        padding-top: 7px;
-                        padding-bottom: 5px;
-                        width: 30%;
-                        outline: none;
+                        width: 40px;
                         text-align: center;
+                        padding: 8px 10px;
+                        font-size: 16px;
+                        outline: none;
                     }
 
                     .elementor-button-quantity {
-                        border: 1px solid #eae9ce;
-                        background: white;
-                        padding: 4px 15px;
-                        font-size: 17px;
-                        outline: none;
+                        background-color: white;
                         color: #74A84A;
+                        border: 1px solid #74A84A;
+                        cursor: pointer;
+                        font-size: 20px;
+                        width: 30px;
+                        height: auto;
+                        text-align: center;
+                        outline: none;
                     }
                 }
 
@@ -94,11 +101,17 @@
                     font-size: 17px;
                     letter-spacing: 2px;
                     text-transform: uppercase;
+                    outline: none;
+
+                    &:hover {
+                        background: #2c541d;
+                    }
                 }
             }
         }
     }
 }
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;

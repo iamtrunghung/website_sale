@@ -9,3 +9,6 @@ export interface product{
     quantity: undefined | number,
     productId: undefined | number
 }
+export interface Product {
+    product: [];
+}

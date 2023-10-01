@@ -18,7 +18,7 @@
                         <input type="number" [(ngModel)]="valueQuantity" class="elementor-quantity-fill">
                         <button class="elementor-button-quantity" (click)="increase()">+</button>
                     </div>
-                    <button class="button-add-to-cart">Add to cart</button>
+                    <button class="button-add-to-cart" (click)="addToCart(product)">Add to cart</button>
                 </div>
             </div>
         </div>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from '../services/products.service';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-detail-product',
@@ -13,6 +15,8 @@ export class DetailProductComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private productService: ProductsService,
+    private message: NzMessageService,
+    private cart: CartService
   ) { }
 
   ngOnInit(): void {
@@ -20,7 +24,6 @@ export class DetailProductComponent implements OnInit {
     if (product) {
       this.productService.getProduct(product).subscribe((product)=>{
         this.product = product;
-        console.log('product',this.product);
       })
     }
   }
@@ -31,6 +34,11 @@ export class DetailProductComponent implements OnInit {
     if (this.valueQuantity > 1) {
       this.valueQuantity -= 1;
     }
+  }
+  addToCart(product: any){
+    product['quantity'] = this.valueQuantity;
+    this.cart.addToCart(product);
+    this.message.create('success', `${product.title} has been added your cart`);
   }
   zoomImage(event: any) {
     let zoomer = event.currentTarget;

@@ -8,9 +8,57 @@
                 <li class="menu-item" routerLink="/cua-hang">SHOP</li>
                 <li class="menu-item" routerLink="/lien-he">CONTACT</li>
             </ul>
-            <div class="header-woo-cart"><span nz-icon nzType="shopping-cart" nzTheme="outline"></span></div>
+            <div class="header-woo-cart" (click)="showCart()"><span nz-icon nzType="shopping-cart"
+                    nzTheme="outline"></span>
+                <span style="font-size: 12px;
+                position: absolute;
+                top: -19px;
+                right: -21px;
+                background: black;
+                padding: 3px 9px;
+                color: white;
+                border-radius: 50%;">{{products.length > 0 ? products.length : 0}}</span>
+            </div>
             <div class="header-account"><span nz-icon nzType="user" nzTheme="outline"></span></div>
-            <div class="header-menu-hambuger" (click)="handleOpenMenuHambuger()"><span nz-icon [nzType]="isOpenMenu ? 'close' : 'menu'" nzTheme="outline"></span></div>
+            <div class="header-menu-hambuger" (click)="handleOpenMenuHambuger()"><span nz-icon
+                    [nzType]="isOpenMenu ? 'close' : 'menu'" nzTheme="outline"></span></div>
         </div>
     </div>
 </div>
+<nz-drawer [nzClosable]="false" [nzVisible]="isShowCart" nzPlacement="right" [nzTitle]="headingTitleCart"
+    [nzFooter]="footer" (nzOnClose)="closeCart()">
+    <ng-container *nzDrawerContent>
+        <div class="elementor-widget-contain">
+            <div class="elementor-widget-cart">
+                <div class="elementor-cart-box" *ngFor="let product of products">
+                    <div class="elementor-image-product">
+                        <img [src]="product.images[0]" [alt]="product.title">
+                    </div>
+                    <div class="elementor-content-product">
+                        <h3 class="elementor-name-product">{{product.title}}</h3>
+                        <p class="elementor-price-product">{{product.quantity}} x ${{product.price}}</p>
+                    </div>
+                    <div class="elementor-close">
+                        <span nz-icon nzType="close-circle" nzTheme="outline" (click)="removeItem(product.id)"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="elementor-widget-total">
+                <p class="elementor-title-total">Subtotal: </p>
+                <p class="elementor-total-price">${{calculateTotal()}}</p>
+            </div>
+        </div>
+    </ng-container>
+    <ng-template #headingTitleCart>
+        <div class="heading-cart">
+            <p style="font-size: 17px;font-weight: 500;color: #74A84A;margin: 0;">Shopping cart</p>
+            <span nz-icon nzType="close" nzTheme="outline" style="cursor: pointer;" (click)="closeCart()"></span>
+        </div>
+    </ng-template>
+    <ng-template #footer>
+        <div class="elementor-widget-footer">
+            <button class="elementor-button-cart" (click)="goToCart()">View cart</button>
+            <button class="elementor-button-cart">Checkout</button>
+        </div>
+    </ng-template>
+</nz-drawer>
