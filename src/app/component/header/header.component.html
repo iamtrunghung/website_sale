@@ -19,12 +19,14 @@
                 color: white;
                 border-radius: 50%;">{{products.length > 0 ? products.length : 0}}</span>
             </div>
-            <div class="header-account"><span nz-icon nzType="user" nzTheme="outline"></span></div>
+            <div class="header-account" routerLink="sign-up"><span nz-icon nzType="user" nzTheme="outline"></span></div>
             <div class="header-menu-hambuger" (click)="handleOpenMenuHambuger()"><span nz-icon
                     [nzType]="isOpenMenu ? 'close' : 'menu'" nzTheme="outline"></span></div>
+                    
         </div>
     </div>
 </div>
+<!-- view cart -->
 <nz-drawer [nzClosable]="false" [nzVisible]="isShowCart" nzPlacement="right" [nzTitle]="headingTitleCart"
     [nzFooter]="footer" (nzOnClose)="closeCart()">
     <ng-container *nzDrawerContent>

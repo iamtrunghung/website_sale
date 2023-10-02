@@ -9,6 +9,7 @@ import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzMessageModule } from 'ng-zorro-antd/message';
 import { NzDrawerModule } from 'ng-zorro-antd/drawer';
+import { NzModalModule } from 'ng-zorro-antd/modal';
 @NgModule({
   exports: [
     CommonModule,
@@ -20,7 +21,8 @@ import { NzDrawerModule } from 'ng-zorro-antd/drawer';
     NzInputNumberModule,
     NzSelectModule,
     NzMessageModule,
-    NzDrawerModule
+    NzDrawerModule,
+    NzModalModule
   ]
 })
 export class NzAntdModule { }

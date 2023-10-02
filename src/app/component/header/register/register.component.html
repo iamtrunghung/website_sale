@@ -1,0 +1,38 @@
+<app-header></app-header>
+<div class="area-signup">
+  <div class="container">
+    <div class="card">
+      <div class="card_title">
+        <h1>Create Account</h1>
+        <span>Already have an account? <a href="/sign-in">Sign In</a></span>
+      </div>
+      <div class="form">
+      <form [formGroup]="formGroup">
+        <input type="text" formControlName="name" id="username" placeholder="UserName" required/>
+        <div *ngIf="form['name'].invalid && (form['name'].dirty || form['name'].touched)">
+          <span *ngIf="form['name'].errors?.['required']" style="color: red">
+              * Name is required
+          </span>
+        </div>
+        <input type="email" formControlName="email" placeholder="Email" id="email" required/>
+        <div *ngIf="form['email'].invalid && (form['email'].dirty || form['email'].touched)">
+          <span *ngIf="form['email'].errors?.['required']" style="color: red">
+            * Email is required
+          </span>
+          <span *ngIf="form['email'].errors?.['pattern']" style="color: red">
+            * Invalid email
+          </span>
+        </div>
+        <input type="password" formControlName="password" placeholder="Password" id="password" required/>
+        <div *ngIf="form['password'].invalid && (form['password'].dirty || form['password'].touched)">
+          <span *ngIf="form['password'].errors?.['required']" style="color: red">
+            * Password is required
+          </span>
+        </div>
+        <button (click)="onSignUp()">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+<app-footer></app-footer>

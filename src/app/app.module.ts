@@ -7,7 +7,7 @@ import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { vi_VN } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import vi from '@angular/common/locales/vi';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NzAntdModule } from './nz-antd/nz-antd.module';
@@ -22,6 +22,9 @@ import { ShopComponent } from './component/shop/shop.component';
 import { DetailProductComponent } from './component/detail-product/detail-product.component';
 import { RelateProductComponent } from './component/relate-product/relate-product.component';
 import { CartComponent } from './component/cart/cart.component';
+import { RegisterComponent } from './component/header/register/register.component';
+import { LoginComponent } from './component/header/login/login.component';
+import { UserComponent } from './component/header/user/user.component';
 registerLocaleData(vi);
 
 @NgModule({
@@ -37,7 +40,10 @@ registerLocaleData(vi);
     ShopComponent,
     DetailProductComponent,
     RelateProductComponent,
-    CartComponent
+    CartComponent,
+    RegisterComponent,
+    LoginComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +51,8 @@ registerLocaleData(vi);
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    NzAntdModule
+    NzAntdModule,
+    ReactiveFormsModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: vi_VN }

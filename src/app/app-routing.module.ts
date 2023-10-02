@@ -6,6 +6,8 @@ import { ShopComponent } from './component/shop/shop.component';
 import { ContactComponent } from './component/contact/contact.component';
 import { DetailProductComponent } from './component/detail-product/detail-product.component';
 import { CartComponent } from './component/cart/cart.component';
+import { RegisterComponent } from './component/header/register/register.component';
+import { LoginComponent } from './component/header/login/login.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/', pathMatch: 'full' },
@@ -32,7 +34,15 @@ const routes: Routes = [
   {
     path: 'lien-he',
     component: ContactComponent
-  }
+  },
+  {
+    path: 'sign-in',
+    component: LoginComponent
+  },
+  {
+    path: 'sign-up',
+    component: RegisterComponent
+  },
 ];
 
 
