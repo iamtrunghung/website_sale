@@ -1,0 +1,104 @@
+.area-checkout {
+    border-top: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.elementor-container {
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+
+.heading-title {
+    font-size: 34px;
+    font-weight: 400;
+    margin-bottom: 50px;
+}
+
+.elementor-widget-checkout {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .elementor-bill-detail {
+        flex-basis: 50%;
+
+        .bill-detail-title {
+            font-size: 20px;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .form-bill {
+            display: flex;
+            flex-direction: column;
+
+            .input-bill {
+                padding: 10px;
+                border: 1px solid #d9d9d9;
+                margin-bottom: 15px;
+                outline: none;
+            }
+
+            .text-bill {
+                font-weight: 500;
+                font-size: 17px;
+                color: #595959;
+            }
+        }
+    }
+
+    .elementor-bill-total {
+        border: 2px solid #d9d9d9;
+        flex-basis: 50%;
+        height: 100%;
+        margin-left: 40px;
+
+        .elementor-detail-bill-total {
+            padding: 20px;
+
+            .title-bill {
+                font-size: 20px;
+                font-weight: 500;
+            }
+
+            .bill-row {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                min-height: 50px;
+                border-bottom: 1px solid #d9d9d9;
+
+                .title-product {
+                    font-size: 18px;
+                    font-weight: 500;
+                    color: #595959;
+                }
+
+                .text-product {
+                    font-size: 18px;
+                    color: #595959;
+                    margin: 0;
+                }
+            }
+
+            .order-now {
+                width: 100%;
+                padding: 7px 0;
+                background: #74A84A;
+                color: white;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-size: 17px;
+                font-weight: 500;
+                border: none;
+                outline: none;
+                transition: .3s all ease-in-out;
+
+                &:hover {
+                    background: #2c541d;
+                    transition: .3s all ease-in-out;
+                }
+            }
+        }
+    }
+}

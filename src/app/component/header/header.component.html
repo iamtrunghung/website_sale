@@ -19,7 +19,9 @@
                 color: white;
                 border-radius: 50%;">{{products.length > 0 ? products.length : 0}}</span>
             </div>
-            <div class="header-account" routerLink="sign-up"><span nz-icon nzType="user" nzTheme="outline"></span></div>
+            <div *ngIf="!user.name" class="header-account" routerLink="/sign-up"><span nz-icon nzType="user" nzTheme="outline"></span></div>
+            <div *ngIf="user.name" class="header-account" style="font-size: 15px;color: #74A84A;font-weight: 500;">Hi {{user.name}}</div>
+            <div *ngIf="user.name" class="header-account" style="font-size: 15px;font-weight: 500;" (click)="logout()">Log out</div>
             <div class="header-menu-hambuger" (click)="handleOpenMenuHambuger()"><span nz-icon
                     [nzType]="isOpenMenu ? 'close' : 'menu'" nzTheme="outline"></span></div>
                     

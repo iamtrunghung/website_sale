@@ -19,5 +19,8 @@ export interface User {
         password: string;
         id: string;
         createdAt: string;
+    },
+    token: {
+        authorization: string;
     }
 }

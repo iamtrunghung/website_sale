@@ -25,6 +25,7 @@ import { CartComponent } from './component/cart/cart.component';
 import { RegisterComponent } from './component/header/register/register.component';
 import { LoginComponent } from './component/header/login/login.component';
 import { UserComponent } from './component/header/user/user.component';
+import { CheckoutComponent } from './component/checkout/checkout.component';
 registerLocaleData(vi);
 
 @NgModule({
@@ -43,7 +44,8 @@ registerLocaleData(vi);
     CartComponent,
     RegisterComponent,
     LoginComponent,
-    UserComponent
+    UserComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,

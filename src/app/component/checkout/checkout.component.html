@@ -1,0 +1,47 @@
+<app-header></app-header>
+<div class="area-checkout">
+    <div class="elementor-container container">
+        <h3 class="heading-title">Checkout</h3>
+        <div class="elementor-widget-checkout">
+            <div class="elementor-bill-detail">
+                <p class="bill-detail-title">Billing details</p>
+                <hr>
+                <form class="form-bill">
+                    <span class="text-bill">Name</span>
+                    <input type="text" class="input-bill">
+                    <span class="text-bill">Address</span>
+                    <input type="text" class="input-bill">
+                    <span class="text-bill">Phone</span>
+                    <input type="text" class="input-bill">
+                    <span>Order notes</span>
+                    <textarea name="" id="" cols="30" rows="3" class="input-bill"></textarea>
+                </form>
+            </div>
+            <div class="elementor-bill-total">
+                <div class="elementor-detail-bill-total">
+                    <h3 class="title-bill">Your order</h3>
+                    <br>
+                    <div class="bill-row">
+                        <p class="title-product">Product</p>
+                        <p class="title-product">Subtotal</p>
+                    </div>
+                    <div class="bill-row" *ngFor="let item of items">
+                        <p class="text-product">{{item.title}} x {{item.quantity}}</p>
+                        <p class="text-product">${{item.price * item.quantity}}</p>
+                    </div>
+                    <div class="bill-row">
+                        <p class="text-product">Subtotal</p>
+                        <p class="text-product">${{calculateTotal()}}</p>
+                    </div>
+                    <div class="bill-row">
+                        <p class="text-product">Total</p>
+                        <p class="text-product">${{calculateTotal()}}</p>
+                    </div>
+                    <br>
+                    <button class="order-now">Order Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

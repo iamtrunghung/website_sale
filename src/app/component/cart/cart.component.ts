@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../services/cart.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-cart',
@@ -8,15 +9,25 @@ import { CartService } from '../services/cart.service';
 })
 export class CartComponent implements OnInit {
   items: any = [];
+  user: any;
   constructor(
-    private cart: CartService
+    private cart: CartService,
+    private userService: UserService,
   ) { }
 
   ngOnInit(): void {
     this.getCartItem();
+    this.getProfile();
   }
   getCartItem() {
     this.items = this.cart.loadCart();
+  }
+  getProfile(){
+    this.userService.getProfile()?.subscribe((result: any)=>{
+      if(result){
+        this.user = result;
+      }
+    })
   }
   increase(item: any) {
     item.quantity += 1;

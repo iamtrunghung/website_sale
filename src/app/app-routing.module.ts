@@ -8,6 +8,7 @@ import { DetailProductComponent } from './component/detail-product/detail-produc
 import { CartComponent } from './component/cart/cart.component';
 import { RegisterComponent } from './component/header/register/register.component';
 import { LoginComponent } from './component/header/login/login.component';
+import { CheckoutComponent } from './component/checkout/checkout.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/', pathMatch: 'full' },
@@ -43,6 +44,10 @@ const routes: Routes = [
     path: 'sign-up',
     component: RegisterComponent
   },
+  {
+    path: 'checkout',
+    component: CheckoutComponent
+  }
 ];
 
 

@@ -6,14 +6,14 @@
         <h1>Sign In</h1>
       </div>
       <div class="form">
-      <form action="/login" method="post">
-          <input type="email" name="email" placeholder="Email" id="email" />
-          <input type="password" name="password" placeholder="Password" id="password" />
+      <form [formGroup]="loginForm">
+          <input type="email" formControlName="email" placeholder="Email" id="email" required/>
+          <input type="password" formControlName="password" placeholder="Password" id="password" required/>
           <div class="field-signup">
             <a href="">Forgot password?</a>
             <a href="/sign-up">Sign up</a>
           </div>
-        <button>Sign In</button>
+        <button (click)="login()">Sign In</button>
       </form>
       </div>
     </div>
