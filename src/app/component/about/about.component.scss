@@ -11,6 +11,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
             .heading-title {
                 color: var(--e-global-color-astglobalcolor1);
                 font-size: 70px;
@@ -20,34 +21,107 @@
             }
         }
     }
-    .area-introduce{
+
+    .area-introduce {
         padding: 125px 0;
         width: 100%;
         height: 100%;
-        .elementor-widget-introduce{
+
+        .elementor-widget-introduce {
             display: flex;
             align-items: center;
             gap: 10px;
-            .elementor-thumbnail-introduce{
-                .elementor-thumbnail{
+
+            .elementor-thumbnail-introduce {
+                .elementor-thumbnail {
                     width: 100%;
                     padding: 10px;
                 }
             }
-            .elementor-content-introduce{
-                .elementor-wrap{
+
+            .elementor-content-introduce {
+                .elementor-wrap {
                     padding: 50px 50px 50px 78px;
-                    .elementor-title-content{
+
+                    .elementor-title-content {
                         text-transform: uppercase;
                         font-size: 38px;
                     }
+
                     .elementor-text-content,
-                    .elementor-sub-text-content{
+                    .elementor-sub-text-content {
                         font-size: 17px;
                         color: #575757;
                     }
                 }
             }
         }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .banner-about {
+        height: 500px;
+    }
+
+    .area-heading {
+        min-height: 400px !important;
+    }
+
+    .heading-title {
+        font-size: 48px !important;
+    }
+
+    .elementor-container {
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100%;
+    }
+
+    .elementor-wrap {
+        padding: 0 !important;
+    }
+
+    .elementor-thumbnail-introduce {
+        flex-basis: 50%;
+    }
+
+    .elementor-content-introduce {
+        flex-basis: 50%;
+        padding: 0 10px;
+        word-break: break-word;
+    }
+}
+@media screen and (max-width: 426px) {
+    .area-introduce{
+        padding: 50px 0 !important;
+    }
+    .heading-title {
+        font-size: 35px !important;
+    }
+    .banner-about{
+        height: 400px !important;
+        min-height: 300px !important;
+    }
+    .area-heading {
+        min-height: 300px !important;
+    }
+    .elementor-widget-introduce{
+        flex-direction: column;
+    }
+    .elementor-title-content{
+        font-size: 28px !important;
+    }
+    .elementor-title-content{
+        font-size: 26px !important;
+    }
+    .elementor-text-content,
+    .elementor-sub-text-content{
+        font-size: 15px !important;
+    }
+}
+@media screen and (max-width:376px) {
+    .heading-title {
+        font-size: 25px !important;
     }
 }

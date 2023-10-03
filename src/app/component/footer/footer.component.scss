@@ -29,6 +29,12 @@
         }
     }
 }
+@media screen and (max-width: 1024px) {
+    .container{
+        padding: 0 !important;
+        margin: 0 20px !important;
+    }
+}
 @media screen and (max-width: 768px){
     .container{
         grid-template-columns: none !important;
@@ -41,4 +47,14 @@
             padding: 20px 0 !important;
         }
     }
+}
+@media screen and (max-width: 426px){
+    .container{
+        grid-template-rows: 200px 50px 50px;    
+        margin: 0 !important;
+        .list-menu{
+            flex-direction: column;
+        }
+    }
+    
 }

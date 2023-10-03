@@ -29,3 +29,29 @@
         }
     }
 }
+@media screen and (max-width: 768px) {
+    .elementor-widget-relate{
+        padding: 0 !important;
+    }
+}
+@media screen and (max-width: 426px) {
+    .elementor-widget-relate{
+        padding: 0 20px !important;
+    }
+    .elementor-title{
+        font-size: 28px !important;
+    }
+    .elementor-list-relate{
+        flex-direction: column;
+        margin-top: 20px;
+        .elementor-widget-box{
+            width: 100%;
+            .elementor-widget-image{
+                width: 100%;
+                .elementor-image{
+                    width: 100% !important;
+                }
+            }
+        }
+    }
+}

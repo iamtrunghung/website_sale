@@ -42,7 +42,8 @@
                 letter-spacing: 2px;
                 margin-top: 10px;
                 transition: 0.2s all ease-in;
-                &:hover{
+
+                &:hover {
                     background: #367107;
                     transition: 0.2s all ease-in;
                 }
@@ -50,19 +51,42 @@
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    .elementor-heading {
+        font-size: 30px !important;
+        text-transform: uppercase;
+        margin: 0;
+    }
+    .elementor-purchase{
+        margin: 0 !important;
+    }
+}
+
 @media screen and (max-width: 426px) {
-    .elementor-wrapper{
+    .elementor-wrapper {
         height: 400px !important;
     }
-    .elementor-heading{
+
+    .elementor-heading {
         font-size: 30px !important;
         text-align: center;
         letter-spacing: 3px !important;
     }
-    .elementor-context{
+
+    .elementor-context {
         font-size: 14px !important;
     }
-    .elementor-purchase{
+
+    .elementor-purchase {
         font-size: 14px !important;
+    }
+}
+@media screen and (max-width: 376px) {
+    .elementor-heading {
+        font-size: 25px !important;
+    }
+    .elementor-context{
+        text-align: center;
     }
 }
