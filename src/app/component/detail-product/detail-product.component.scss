@@ -10,7 +10,6 @@
         .elementor-widget-image-detail {
             position: relative;
             overflow: hidden;
-            width: 500px;
             background-position: 50% 50%;
             cursor: zoom-in;
 
@@ -62,7 +61,7 @@
                 align-items: center;
 
                 .elementor-quantity {
-                    flex-basis: 50%;
+                    flex-basis: 20%;
                     display: flex;
                     overflow: hidden;
                     width: 55%;

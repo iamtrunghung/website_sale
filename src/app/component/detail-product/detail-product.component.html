@@ -3,13 +3,13 @@
     <div class="elementor-widget-detail">
         <div class="elementor-widget-contain container">
             <figure class="elementor-widget-image-detail"
-                [ngStyle]="{'background-image':' url(' + product?.images[0] + ')'}" (mousemove)="zoomImage($event)">
-                <img [src]="product?.images[0]" alt="" class="elementor-image-detail">
+                [ngStyle]="{'background-image':' url(' + product.image + ')'}" (mousemove)="zoomImage($event)">
+                <img [src]="product.image" alt="" class="elementor-image-detail">
             </figure>
             <div class="elementor-widget-summary-detail">
-                <p class="elementor-back-to-page">Home / {{product.category?.name}} / {{product.title}}</p>
-                <p class="elementor-category-product">Category: {{product.category?.name}}</p>
-                <h2 class="elementor-name-product">{{product.title}}</h2>
+                <p class="elementor-back-to-page">Home / {{product.category}} / {{product.name}}</p>
+                <p class="elementor-category-product">Category: {{product.category}}</p>
+                <h2 class="elementor-name-product">{{product.name}}</h2>
                 <p class="elementor-price-product">$ {{product.price}}</p>
                 <p class="elementor-short-description">{{product.description}}</p>
                 <div class="elementor-add-to-cart">

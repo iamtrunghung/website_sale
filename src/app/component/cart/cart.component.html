@@ -1,75 +1,64 @@
 <app-header></app-header>
 <section class="area-cart">
-    <div class="cart-container container">
-        <div class="content-area">
-            <main class="site-main">
-                <article>
-                    <header class="entry-header">
-                        <h1 class="title-header">Cart</h1>
-                    </header>
-                    <div class="entry-content">
-                        <table class="shop-table">
-                            <thead>
-                                <tr style="background: #fbfbfb;">
-                                    <th class="product-remove">Remove Item</th>
-                                    <th class="product-thumbnail">Thumbnail image</th>
-                                    <th class="product-name">Product</th>
-                                    <th class="product-price">Price</th>
-                                    <th class="product-quantity">Quantity</th>
-                                    <th class="product-subtotal">Subtotal</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="cart-item" *ngFor="let item of items">
-                                    <td class="product-remove"><span nz-icon nzType="close-circle"
-                                            nzTheme="outline" (click)="removeItem(item.id)" style="cursor: pointer;"></span></td>
-                                    <td class="product-thumbnail">
-                                        <img [src]="item.images[0]" [alt]="item.title"
-                                            style="width: 75px;height: 75px;">
-                                    </td>
-                                    <td class="product-name" style="color: #74A84A;">{{item.title}}</td>
-                                    <td class="product-price">${{item.price}}</td>
-                                    <td class="product-quantity">
-                                        <div class="elementor-quantity">
-                                            <button class="elementor-button-quantity"
-                                                (click)="decrease(item)">-</button>
-                                            <input type="number" [(ngModel)]="item.quantity"
-                                                class="elementor-quantity-fill">
-                                            <button class="elementor-button-quantity"
-                                                (click)="increase(item)">+</button>
-                                        </div>
-                                    </td>
-                                    <td class="product-subtotal">${{item.price * item.quantity}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="cart-totals">
-                        <h2 class="cart-title">Cart totals</h2>
-                        <table cellspacing="0" class="shop-table" style="width: 100%">
-                            <tbody>
-                                <tr class="cart-subtotal" style="border-bottom: 1px solid #d9d9d9">
-                                    <th
-                                        style="font-size: 17px;color: #595959;width: 50%;font-weight: 400;padding: 15px;">
-                                        Subtotal</th>
-                                    <td style="font-size: 17px;color: #595959;width: 50%;padding: 15px;">
-                                        ${{calculateTotal()}}</td>
-                                </tr>
-                                <tr class="order-total" style="border-bottom: 1px solid #d9d9d9">
-                                    <th
-                                        style="font-size: 17px;color: #595959;width: 50%;font-weight: 400;padding: 15px;">
-                                        Total</th>
-                                    <td style="font-size: 17px;color: #595959;width: 50%;padding: 15px;">
-                                        ${{calculateTotal()}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <button class="button-checkout"  routerLink="/checkout">Proceed to checkout</button>
-                        <!-- <span style="color: red;" *ngIf="!user">Please log in to order</span> -->
-                    </div>
-                </article>
-            </main>
-        </div> 
+    <div class="elementor-widget-cart">
+        <div class="cart-container container">
+            <header class="entry-header">
+                <h1 class="title-header">Cart</h1>
+            </header>
+                <table class="shop-table">
+                    <thead>
+                        <tr style="background: #fbfbfb;">
+                            <th class="product-remove">Remove Item</th>
+                            <th class="product-thumbnail">Thumbnail image</th>
+                            <th class="product-name">Product</th>
+                            <th class="product-price">Price</th>
+                            <th class="product-quantity">Quantity</th>
+                            <th class="product-subtotal">Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="cart-item" *ngFor="let item of items">
+                            <td class="product-remove"><span nz-icon nzType="close-circle" nzTheme="outline"
+                                    (click)="removeItem(item.id)" style="cursor: pointer;"></span></td>
+                            <td class="product-thumbnail">
+                                <img [src]="item.image" [alt]="item.name" style="width: 75px;height: 75px;">
+                            </td>
+                            <td class="product-name" style="color: #74A84A;">{{item.name}}</td>
+                            <td class="product-price">${{item.price}}</td>
+                            <td class="product-quantity">
+                                <div class="elementor-quantity">
+                                    <button class="elementor-button-quantity" (click)="decrease(item)">-</button>
+                                    <input type="number" [(ngModel)]="item.quantity" class="elementor-quantity-fill">
+                                    <button class="elementor-button-quantity" (click)="increase(item)">+</button>
+                                </div>
+                            </td>
+                            <td class="product-subtotal">${{item.price * item.quantity}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="cart-totals">
+                    <h2 class="cart-title">Cart totals</h2>
+                    <table cellspacing="0" class="cart-table" style="width: 100%">
+                        <tbody>
+                            <tr class="cart-subtotal" style="border-bottom: 1px solid #d9d9d9">
+                                <th class="total-title" style="font-size: 17px;color: #595959;width: 50%;font-weight: 400;padding: 15px;">
+                                    Subtotal</th>
+                                <td class="total-text" style="font-size: 17px;color: #595959;width: 50%;padding: 15px;">
+                                    ${{calculateTotal()}}</td>
+                            </tr>
+                            <tr class="order-total" style="border-bottom: 1px solid #d9d9d9">
+                                <th class="total-title" style="font-size: 17px;color: #595959;width: 50%;font-weight: 400;padding: 15px;">
+                                    Total</th>
+                                <td class="total-text" style="font-size: 17px;color: #595959;width: 50%;padding: 15px;">
+                                    ${{calculateTotal()}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="button-checkout" routerLink="/checkout">Proceed to checkout</button>
+                    <!-- <span style="color: red;" *ngIf="!user">Please log in to order</span> -->
+                </div>
+
+        </div>
     </div>
 </section>
 <app-footer></app-footer>

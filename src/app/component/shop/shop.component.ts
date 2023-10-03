@@ -11,7 +11,7 @@ export class ShopComponent implements OnInit {
   products: any = [];
   searchProducts: any = [];
   keySearch: string = '';
-  valueRangePrice: any = [0,1000];
+  valueRangePrice: any = [0,100];
   optionSelected: string = '';
   sortProducts: any = [
     {name: 'low to high'},
@@ -29,15 +29,13 @@ export class ShopComponent implements OnInit {
   formatterDollar = (value: number): string => `$ ${value}`;
   parserDollar = (value: string): string => value.replace('$ ', '');
   getProducts() {
-    this.product.getProducts().subscribe((res)=>{
-      this.products = this.searchProducts = res;
-    })
+    this.products = this.searchProducts = this.product.getProducts();
   }
   handleSearchProduct(key: any){
     if(key === ''){
       this.products = this.searchProducts;
     }else{
-      this.products = this.products.filter((product: any) =>product.title.toLowerCase().includes(key.toLowerCase()));
+      this.products = this.products.filter((product: any) =>product.name.toLowerCase().includes(key.toLowerCase()));
     }
   }
   handleSearchPrice(price: any){
@@ -53,7 +51,7 @@ export class ShopComponent implements OnInit {
         break;
     }
   }
-  viewDetailProduct(idProduct: any){
-    this.router.navigate([`/chi-tiet-san-pham/${idProduct}`])
+  viewDetailProduct(id: any){
+    this.router.navigate([`/product-detail/${id}`])
   }
 }

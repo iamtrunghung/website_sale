@@ -8,11 +8,18 @@
         display: flex;
         align-items: center;
         gap: 15px;
+        margin-top: 40px;
         .elementor-widget-box{
-            .elementor-widget-image > .elementor-image{
-                width: 200px;
-                height: 100%;
-            }
+            width: 250px;
+            margin-right: 20px;
+            .elementor-widget-image{
+                width: 100%;
+                height: 250px;
+                .elementor-image{
+                    width: 100%;
+                    height: 100%;
+                }
+            } 
             .elementor-category-product{
                 font-size: 15px;
                 color: #848484;

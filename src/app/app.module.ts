@@ -26,6 +26,11 @@ import { RegisterComponent } from './component/header/register/register.componen
 import { LoginComponent } from './component/header/login/login.component';
 import { UserComponent } from './component/header/user/user.component';
 import { CheckoutComponent } from './component/checkout/checkout.component';
+import { provideAuth, getAuth } from '@angular/fire/auth'
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { provideStorage, getStorage } from '@angular/fire/storage';
+import { environment } from 'src/environments/environment';
 registerLocaleData(vi);
 
 @NgModule({
@@ -54,7 +59,11 @@ registerLocaleData(vi);
     HttpClientModule,
     BrowserAnimationsModule,
     NzAntdModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage())
   ],
   providers: [
     { provide: NZ_I18N, useValue: vi_VN }

@@ -12,11 +12,11 @@ export class UserService {
     private router: Router
   ) { }
   createUser(account: User) {
-    const url = 'https://api.escuelajs.co/api/v1/users';
-    return this.HttpClient.post<User>(url, account);
+    const url = 'https://fakestoreapi.com/users';
+    return this.HttpClient.post<User>(url, JSON.stringify(account));
   }
   getUser(id: number) {
-    return this.HttpClient.get<User>(`https://api.escuelajs.co/api/v1/users/${id}`);
+    return this.HttpClient.get<User>(`https://fakestoreapi.com/users/${id}`);
   }
   checkLogin(account: User) {
     this.HttpClient.post<User>('https://api.escuelajs.co/api/v1/auth/login', account).subscribe((result: any) => {

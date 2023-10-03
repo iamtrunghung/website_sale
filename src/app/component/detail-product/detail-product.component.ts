@@ -20,12 +20,11 @@ export class DetailProductComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const product = Number(this.route.snapshot.paramMap.get('productId'));
-    if (product) {
-      this.productService.getProduct(product).subscribe((product)=>{
-        this.product = product;
-      })
-    }
+    const routeParams = this.route.snapshot.paramMap;
+    const productIdFromRoute = Number(routeParams.get('idProduct'));
+    this.product = this.productService.getProducts().find(
+      (product) => product.id === productIdFromRoute
+    );
   }
   increase() {
     this.valueQuantity += 1;
@@ -38,7 +37,7 @@ export class DetailProductComponent implements OnInit {
   addToCart(product: any){
     product['quantity'] = this.valueQuantity;
     this.cart.addToCart(product);
-    this.message.create('success', `${product.title} has been added your cart`);
+    this.message.create('success', `${product.name} has been added your cart`);
   }
   zoomImage(event: any) {
     let zoomer = event.currentTarget;

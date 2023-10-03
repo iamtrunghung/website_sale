@@ -36,10 +36,10 @@
             <div class="elementor-widget-cart">
                 <div class="elementor-cart-box" *ngFor="let product of products">
                     <div class="elementor-image-product">
-                        <img [src]="product.images[0]" [alt]="product.title">
+                        <img [src]="product.image" [alt]="product.name">
                     </div>
                     <div class="elementor-content-product">
-                        <h3 class="elementor-name-product">{{product.title}}</h3>
+                        <h3 class="elementor-name-product">{{product.name}}</h3>
                         <p class="elementor-price-product">{{product.quantity}} x ${{product.price}}</p>
                     </div>
                     <div class="elementor-close">
