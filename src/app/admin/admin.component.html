@@ -10,15 +10,22 @@
   <div class="bottom-dashboard">
     <div class="sidebar-secondary">
       <ul nz-menu nzMode="inline">
-        <li nz-submenu nzTitle="Product List" nzIcon="ordered-list" >
+        <li nz-submenu nzTitle="Home">
         </li>
-        <li nz-submenu nzTitle="product Feature" nzIcon="copyright">
+        <li nz-submenu nzTitle="Products">
+            <ul>
+              <li nz-menu-item (click)="goToProductList()">Product list</li>
+              <li nz-menu-item (click)="goToProductFeature()">Product feature</li>
+            </ul>
         </li>
-        <li nz-submenu nzTitle="Purchase Order" nzIcon="setting">
+        <li nz-submenu nzTitle="Purchase Order">
         </li>
       </ul>
     </div>
     <div class="sidebar-primary">
+      <app-home-admin *ngIf="!isShowProductList && !isShowProductFeature"></app-home-admin>
+      <app-product-list-admin *ngIf="isShowProductList"></app-product-list-admin>
+      <app-product-feature-admin *ngIf="isShowProductFeature"></app-product-feature-admin>
     </div>
   </div>
 </div>

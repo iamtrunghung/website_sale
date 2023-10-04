@@ -11,6 +11,7 @@ import { NzMessageModule } from 'ng-zorro-antd/message';
 import { NzDrawerModule } from 'ng-zorro-antd/drawer';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzTableModule } from 'ng-zorro-antd/table';
 @NgModule({
   exports: [
     CommonModule,
@@ -24,7 +25,8 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
     NzMessageModule,
     NzDrawerModule,
     NzModalModule,
-    NzMenuModule
+    NzMenuModule,
+    NzTableModule
   ]
 })
 export class NzAntdModule { }

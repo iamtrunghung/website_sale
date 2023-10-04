@@ -10,9 +10,13 @@ import { RegisterComponent } from './component/header/register/register.componen
 import { LoginComponent } from './component/header/login/login.component';
 import { CheckoutComponent } from './component/checkout/checkout.component';
 import { AdminComponent } from './admin/admin.component';
+import { ProductListAdminComponent } from './admin/product-list-admin/product-list-admin.component';
+import { ProductFeatureAdminComponent } from './admin/product-feature-admin/product-feature-admin.component';
+import { HomeAdminComponent } from './admin/home-admin/home-admin.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/', pathMatch: 'full' },
+  { path: 'admin', redirectTo: '/admin', pathMatch: 'full'},
   {
     path: '',
     component: HomeComponent
@@ -52,7 +56,19 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent
-  }
+  },
+  {
+    path: 'admin/home',
+    component: HomeAdminComponent
+  },
+  {
+    path: 'product-list',
+    component: ProductListAdminComponent
+  },
+  {
+    path: 'product-feature',
+    component: ProductFeatureAdminComponent
+  },
 ];
 
 

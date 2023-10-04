@@ -32,6 +32,10 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { provideStorage, getStorage } from '@angular/fire/storage';
 import { environment } from 'src/environments/environment';
 import { AdminComponent } from './admin/admin.component';
+import { ProductListAdminComponent } from './admin/product-list-admin/product-list-admin.component';
+import { ProductFeatureAdminComponent } from './admin/product-feature-admin/product-feature-admin.component';
+import { HomeAdminComponent } from './admin/home-admin/home-admin.component';
+import { CKEditorModule } from 'ckeditor4-angular';
 registerLocaleData(vi);
 
 @NgModule({
@@ -52,7 +56,10 @@ registerLocaleData(vi);
     LoginComponent,
     UserComponent,
     CheckoutComponent,
-    AdminComponent
+    AdminComponent,
+    ProductListAdminComponent,
+    ProductFeatureAdminComponent,
+    HomeAdminComponent
   ],
   imports: [
     BrowserModule,
@@ -62,6 +69,7 @@ registerLocaleData(vi);
     BrowserAnimationsModule,
     NzAntdModule,
     ReactiveFormsModule,
+    CKEditorModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
