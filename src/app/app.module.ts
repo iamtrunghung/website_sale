@@ -31,6 +31,7 @@ import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { provideStorage, getStorage } from '@angular/fire/storage';
 import { environment } from 'src/environments/environment';
+import { AdminComponent } from './admin/admin.component';
 registerLocaleData(vi);
 
 @NgModule({
@@ -50,7 +51,8 @@ registerLocaleData(vi);
     RegisterComponent,
     LoginComponent,
     UserComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

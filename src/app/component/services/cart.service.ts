@@ -25,7 +25,6 @@ export class CartService {
     this.items = JSON.parse(localStorage.getItem("cart_items") || '[]');
     return this.items;
   }
-
   saveCart(): void {
     localStorage.setItem('cart_items', JSON.stringify(this.items)); 
   }

@@ -6,15 +6,30 @@
             <div class="elementor-bill-detail">
                 <p class="bill-detail-title">Billing details</p>
                 <hr>
-                <form class="form-bill">
+                <form [formGroup]="formOrder" class="form-bill">
                     <span class="text-bill">Name</span>
-                    <input type="text" class="input-bill">
+                    <input type="text" formControlName="name" class="input-bill" required>
+                    <div *ngIf="form['name'].invalid && (form['name'].dirty || form['name'].touched)">
+                        <span *ngIf="form['name'].errors?.['required']" style="color: red">
+                            * Name is required
+                        </span>
+                    </div>
                     <span class="text-bill">Address</span>
-                    <input type="text" class="input-bill">
+                    <input type="text" formControlName="address" class="input-bill" required>
+                    <div *ngIf="form['address'].invalid && (form['address'].dirty || form['address'].touched)">
+                        <span *ngIf="form['address'].errors?.['required']" style="color: red">
+                            * Address is required
+                        </span>
+                    </div>
                     <span class="text-bill">Phone</span>
-                    <input type="text" class="input-bill">
-                    <span>Order notes</span>
-                    <textarea name="" id="" cols="30" rows="3" class="input-bill"></textarea>
+                    <input type="text" formControlName="phone" class="input-bill" required>
+                    <div *ngIf="form['phone'].invalid && (form['phone'].dirty || form['phone'].touched)">
+                        <span *ngIf="form['phone'].errors?.['required']" style="color: red">
+                            * Phone is required
+                        </span>
+                    </div>
+                    <span class="text-bill">Order notes</span>
+                    <textarea name="" id="" formControlName="orders" cols="30" rows="3" class="input-bill"></textarea>
                 </form>
             </div>
             <div class="elementor-bill-total">
@@ -26,7 +41,7 @@
                         <p class="title-product">Subtotal</p>
                     </div>
                     <div class="bill-row" *ngFor="let item of items">
-                        <p class="text-product">{{item.title}} x {{item.quantity}}</p>
+                        <p class="text-product">{{item.name}} x {{item.quantity}}</p>
                         <p class="text-product">${{item.price * item.quantity}}</p>
                     </div>
                     <div class="bill-row">
@@ -38,7 +53,22 @@
                         <p class="text-product">${{calculateTotal()}}</p>
                     </div>
                     <br>
-                    <button class="order-now">Order Now</button>
+                    <button class="order-now" [disabled]="form['name'].errors?.['required'] || 
+                    form['address'].errors?.['required'] || 
+                    form['phone'].errors?.['required'] ? true : false" (click)="order()"
+                    [ngStyle]="{
+                        'opacity': form['name'].errors?.['required'] || 
+                        form['address'].errors?.['required'] || 
+                        form['phone'].errors?.['required'] ? 0.5 : 1,
+                        'cursor': form['name'].errors?.['required'] || 
+                        form['address'].errors?.['required'] || 
+                        form['phone'].errors?.['required'] ? 'not-allowed' : 'pointer'
+                    }">Order Now</button>
+                    <span *ngIf="form['name'].errors?.['required'] || 
+                    form['address'].errors?.['required'] || 
+                    form['phone'].errors?.['required']" style="color: red;">
+                        *Please type full your fill.
+                    </span>
                 </div>
             </div>
         </div>

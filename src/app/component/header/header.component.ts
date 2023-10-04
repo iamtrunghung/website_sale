@@ -51,6 +51,9 @@ export class HeaderComponent implements OnInit {
   goToCart(){
     this.router.navigate(['/cart']);
   }
+  goToCheckOut(){
+    this.router.navigate(['/checkout']);
+  }
   showCart(){
     this.isShowCart = true;
   }

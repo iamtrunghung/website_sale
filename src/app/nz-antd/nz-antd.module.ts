@@ -10,6 +10,7 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzMessageModule } from 'ng-zorro-antd/message';
 import { NzDrawerModule } from 'ng-zorro-antd/drawer';
 import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
 @NgModule({
   exports: [
     CommonModule,
@@ -22,7 +23,8 @@ import { NzModalModule } from 'ng-zorro-antd/modal';
     NzSelectModule,
     NzMessageModule,
     NzDrawerModule,
-    NzModalModule
+    NzModalModule,
+    NzMenuModule
   ]
 })
 export class NzAntdModule { }

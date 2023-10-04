@@ -102,3 +102,38 @@
         }
     }
 }
+@media screen and (max-width: 1024px) {
+    .elementor-container{
+        padding: 0 !important;
+    }
+}
+@media screen and (max-width: 768px) {
+    .elementor-widget-checkout{
+        flex-direction: column;
+    }
+    .elementor-bill-detail{
+        width: 100%;
+    }
+    .elementor-bill-total{
+        width: 100%;
+        margin-left: 0 !important;
+    }
+    .heading-title{
+        font-size: 30px !important;
+    }
+}
+@media screen and (max-width: 426px) {
+    .elementor-container{
+        padding: 0 20px !important;
+    }
+    .text-bill{
+        font-size: 15px !important;
+    }
+    .title-product,
+    .text-product{
+        font-size: 15px !important;
+    }
+    .order-now{
+        font-size: 15px !important;
+    }
+}

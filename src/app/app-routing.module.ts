@@ -9,6 +9,7 @@ import { CartComponent } from './component/cart/cart.component';
 import { RegisterComponent } from './component/header/register/register.component';
 import { LoginComponent } from './component/header/login/login.component';
 import { CheckoutComponent } from './component/checkout/checkout.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/', pathMatch: 'full' },
@@ -21,7 +22,7 @@ const routes: Routes = [
     component: AboutComponent
   },
   {
-    path: 'cua-hang',
+    path: 'shop',
     component: ShopComponent
   },
   {
@@ -47,6 +48,10 @@ const routes: Routes = [
   {
     path: 'checkout',
     component: CheckoutComponent
+  },
+  {
+    path: 'admin',
+    component: AdminComponent
   }
 ];
 

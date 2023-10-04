@@ -1,13 +1,16 @@
 .area-cart {
     border-top: 1px solid #d9d9d9;
+
     .elementor-widget-cart {
         width: 100%;
         height: 100%;
     }
-    .cart-container{
+
+    .cart-container {
         height: 100%;
         margin-top: 70px !important;
     }
+
     .entry-header {
         width: 100%;
         margin-bottom: 20px;
@@ -20,6 +23,7 @@
 
     .shop-table {
         width: 100%;
+
         th,
         td {
             padding: 10px;
@@ -70,7 +74,9 @@
             }
         }
     }
-    .cart-table{
+
+    .cart-table {
+
         th,
         td {
             padding: 10px;
@@ -86,6 +92,7 @@
             font-size: 17px;
         }
     }
+
     .cart-totals {
         padding: 0 20px;
         border-width: 1px;
@@ -133,6 +140,28 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
+.empty-cart {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+    .text-empty {
+        font-size: 17px;
+        font-weight: 500;
+        margin: 0;
+    }
+
+    .button-return {
+        padding: 10px 20px;
+        background-color: #74A84A;
+        color: white;
+        border: none;
+        outline: none;
+        text-transform: uppercase;
+        font-size: 15px;
+        letter-spacing: 2px;
+    }
+}
+
 @media screen and (max-width: 1024px) {
     .cart-container {
         padding: 0px 20px !important;
@@ -140,41 +169,52 @@ input::-webkit-inner-spin-button {
         max-width: 100%;
     }
 }
+
 @media screen and (max-width: 768px) {
-    .cart-totals{
+    .cart-totals {
         width: 100% !important;
     }
-    .elementor-quantity{
+
+    .elementor-quantity {
         justify-content: flex-end !important;
     }
-    .shop-table{
-        .cart-item{
+
+    .shop-table {
+        .cart-item {
             margin-bottom: 20px !important;
         }
+
         /* Force table to not be like tables anymore */
-        table, thead, tbody, th, td, tr { 
-            display: block; 
+        table,
+        thead,
+        tbody,
+        th,
+        td,
+        tr {
+            display: block;
         }
-        
+
         /* Hide table headers (but not display: none;, for accessibility) */
-        thead tr { 
+        thead tr {
             position: absolute;
             top: -9999px;
             left: -9999px;
         }
-        
-        tr { border: 1px solid #ccc; }
-        
-        td { 
+
+        tr {
+            border: 1px solid #ccc;
+        }
+
+        td {
             /* Behave  like a "row" */
             border: none;
-            border-bottom: 1px solid #eee; 
+            border-bottom: 1px solid #eee;
             position: relative;
-            padding-left: 50%; 
+            padding-left: 50%;
             text-align: right !important;
         }
-        
-        td:before { 
+
+        td:before {
             /* Now like a table header */
             position: absolute;
             color: #595959;
@@ -183,32 +223,52 @@ input::-webkit-inner-spin-button {
             top: 6px;
             left: 6px;
             font-weight: 500;
-            padding-right: 10px; 
+            padding-right: 10px;
             white-space: nowrap;
         }
-        td:nth-of-type(2):before { content: "Thumbnail image: "; }
-        td:nth-of-type(3):before { content: "Product: "; }
-        td:nth-of-type(4):before { content: "Price:"; }
-        td:nth-of-type(5):before { content: "Quantity:"; }
-        td:nth-of-type(6):before { content: "Subtotal:"; }
+
+        td:nth-of-type(2):before {
+            content: "Thumbnail image: ";
+        }
+
+        td:nth-of-type(3):before {
+            content: "Product: ";
+        }
+
+        td:nth-of-type(4):before {
+            content: "Price:";
+        }
+
+        td:nth-of-type(5):before {
+            content: "Quantity:";
+        }
+
+        td:nth-of-type(6):before {
+            content: "Subtotal:";
+        }
     }
-    .button-checkout{
+
+    .button-checkout {
         font-size: 17px !important;
     }
 }
+
 @media screen and (max-width: 426px) {
-    .area-cart{
-        .cart-container{
+    .area-cart {
+        .cart-container {
             margin-top: 35px !important;
         }
-        .total-title{
+
+        .total-title {
             text-align: left !important;
         }
-        .total-text{
+
+        .total-text {
             text-align: right !important;
         }
     }
-    .button-checkout{
+
+    .button-checkout {
         font-size: 15px !important;
     }
 }

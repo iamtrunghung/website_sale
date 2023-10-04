@@ -5,7 +5,7 @@
             <ul class="list-menu" [ngClass]="isOpenMenu ? 'open-list-menu' : 'close-list-menu'">
                 <li class="menu-item" routerLink="/">HOME</li>
                 <li class="menu-item" routerLink="/gioi-thieu">ABOUT</li>
-                <li class="menu-item" routerLink="/cua-hang">SHOP</li>
+                <li class="menu-item" routerLink="/shop">SHOP</li>
                 <li class="menu-item" routerLink="/lien-he">CONTACT</li>
             </ul>
             <div class="header-woo-cart" (click)="showCart()"><span nz-icon nzType="shopping-cart"
@@ -62,7 +62,7 @@
     <ng-template #footer>
         <div class="elementor-widget-footer">
             <button class="elementor-button-cart" (click)="goToCart()">View cart</button>
-            <button class="elementor-button-cart">Checkout</button>
+            <button class="elementor-button-cart" (click)="goToCheckOut()">Checkout</button>
         </div>
     </ng-template>
 </nz-drawer>

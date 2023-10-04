@@ -2,9 +2,10 @@
 <section class="area-cart">
     <div class="elementor-widget-cart">
         <div class="cart-container container">
-            <header class="entry-header">
-                <h1 class="title-header">Cart</h1>
-            </header>
+            <div *ngIf="items.length > 0">
+                <header class="entry-header">
+                    <h1 class="title-header">Cart</h1>
+                </header>
                 <table class="shop-table">
                     <thead>
                         <tr style="background: #fbfbfb;">
@@ -41,13 +42,15 @@
                     <table cellspacing="0" class="cart-table" style="width: 100%">
                         <tbody>
                             <tr class="cart-subtotal" style="border-bottom: 1px solid #d9d9d9">
-                                <th class="total-title" style="font-size: 17px;color: #595959;width: 50%;font-weight: 400;padding: 15px;">
+                                <th class="total-title"
+                                    style="font-size: 17px;color: #595959;width: 50%;font-weight: 400;padding: 15px;">
                                     Subtotal</th>
                                 <td class="total-text" style="font-size: 17px;color: #595959;width: 50%;padding: 15px;">
                                     ${{calculateTotal()}}</td>
                             </tr>
                             <tr class="order-total" style="border-bottom: 1px solid #d9d9d9">
-                                <th class="total-title" style="font-size: 17px;color: #595959;width: 50%;font-weight: 400;padding: 15px;">
+                                <th class="total-title"
+                                    style="font-size: 17px;color: #595959;width: 50%;font-weight: 400;padding: 15px;">
                                     Total</th>
                                 <td class="total-text" style="font-size: 17px;color: #595959;width: 50%;padding: 15px;">
                                     ${{calculateTotal()}}</td>
@@ -57,7 +60,18 @@
                     <button class="button-checkout" routerLink="/checkout">Proceed to checkout</button>
                     <!-- <span style="color: red;" *ngIf="!user">Please log in to order</span> -->
                 </div>
-
+            </div>
+            <div *ngIf="items.length == 0">
+                <div class="empty-cart">
+                    <div class="image-empty">
+                        <img src="https://img.freepik.com/premium-vector/shopping-cart-with-cross-mark-wireless-paymant-icon-shopping-bag-failure-paymant-sign-online-shopping-vector_662353-912.jpg"
+                            style="width: 200px;" alt="">
+                    </div>
+                    <p class="text-empty">Your cart is currently empty</p>
+                    <p>Add something to make me happy ^^</p>
+                    <button class="button-return" (click)="goBackShop()">Return the shop</button>
+                </div>
+            </div>
         </div>
     </div>
 </section>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../services/cart.service';
 import { UserService } from '../services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -13,6 +14,7 @@ export class CartComponent implements OnInit {
   constructor(
     private cart: CartService,
     private userService: UserService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -47,5 +49,8 @@ export class CartComponent implements OnInit {
   removeItem(idProduct: any){
     this.items = this.items.filter((prd: any)=> prd.id !== idProduct);
     localStorage.setItem("cart_items", JSON.stringify(this.items));
+  }
+  goBackShop(){
+    this.router.navigate(['/shop'])
   }
 }
