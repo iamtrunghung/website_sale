@@ -11,7 +11,7 @@
                 <p class="elementor-category-product">Category: {{product.category}}</p>
                 <h2 class="elementor-name-product">{{product.name}}</h2>
                 <p class="elementor-price-product">$ {{product.price}}</p>
-                <p class="elementor-short-description">{{product.description}}</p>
+                <p class="elementor-short-description" [innerHTML]="product.description"></p>
                 <div class="elementor-add-to-cart">
                     <div class="elementor-quantity">
                         <button class="elementor-button-quantity" (click)="decrease()">-</button>

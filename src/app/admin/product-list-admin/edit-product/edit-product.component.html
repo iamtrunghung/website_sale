@@ -1,0 +1,39 @@
+<form>
+    <div class="form-group" [formGroup]="formEditProduct">
+        <div class="form-control">
+            <p class="text-form">Name</p>
+            <input nz-input formControlName="name" type="text" class="text-product">
+        </div>
+        <div class="form-control">
+            <p class="text-form">Price</p>
+            <input nz-input formControlName="price" type="text" class="text-product">
+        </div>
+        <div class="form-control">
+            <p class="text-form">Unit</p>
+            <input nz-input formControlName="unit" type="text" class="text-product">
+        </div>
+        <div class="form-control">
+            <p class="text-form">Category</p>
+            <input nz-input formControlName="category" type="text" class="text-product">
+        </div>
+    </div>
+    <div class="form-control">
+        <p class="text-form">Image</p>
+        <div class="control-image">
+            <img [src]="fileToUpload || 'https://phutungnhapkhauchinhhang.com/wp-content/uploads/2020/06/default-thumbnail.jpg'"
+                alt="" style="width: 100px;height: 100px;">
+            <input nz-input type="text" [(ngModel)]="fileToUpload" name="image" placeholder="please type your address image here...">
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="form-control" style="margin-top: 20px;height: 100%;">
+        <p>Description</p>
+        <ckeditor id="editor" [editor]="editor" [(ngModel)]="data" [ngModelOptions]="{standalone: true}"></ckeditor>
+    </div>
+    <div class="button-action">
+        <button class="button-cancel" (click)="handleCancel()">Cancel</button>
+        <button class="button-ok" (click)="handleOk()">OK</button>
+    </div>
+</form>

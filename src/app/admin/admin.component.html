@@ -10,8 +10,6 @@
   <div class="bottom-dashboard">
     <div class="sidebar-secondary">
       <ul nz-menu nzMode="inline">
-        <li nz-submenu nzTitle="Home">
-        </li>
         <li nz-submenu nzTitle="Products">
             <ul>
               <li nz-menu-item (click)="goToProductList()">Product list</li>
@@ -23,8 +21,7 @@
       </ul>
     </div>
     <div class="sidebar-primary">
-      <app-home-admin *ngIf="!isShowProductList && !isShowProductFeature"></app-home-admin>
-      <app-product-list-admin *ngIf="isShowProductList"></app-product-list-admin>
+      <app-product-list-admin *ngIf="!isShowProductFeature"></app-product-list-admin>
       <app-product-feature-admin *ngIf="isShowProductFeature"></app-product-feature-admin>
     </div>
   </div>

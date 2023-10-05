@@ -29,7 +29,10 @@ export class ShopComponent implements OnInit {
   formatterDollar = (value: number): string => `$ ${value}`;
   parserDollar = (value: string): string => value.replace('$ ', '');
   getProducts() {
-    this.products = this.searchProducts = this.product.getProducts();
+     this.product.getProducts().subscribe((result)=>{
+      this.products = this.searchProducts = result;
+      console.log('products',this.products);
+    });
   }
   handleSearchProduct(key: any){
     if(key === ''){

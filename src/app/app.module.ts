@@ -35,7 +35,9 @@ import { AdminComponent } from './admin/admin.component';
 import { ProductListAdminComponent } from './admin/product-list-admin/product-list-admin.component';
 import { ProductFeatureAdminComponent } from './admin/product-feature-admin/product-feature-admin.component';
 import { HomeAdminComponent } from './admin/home-admin/home-admin.component';
-import { CKEditorModule } from 'ckeditor4-angular';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { AddProductComponent } from './admin/product-list-admin/add-product/add-product.component';
+import { EditProductComponent } from './admin/product-list-admin/edit-product/edit-product.component';
 registerLocaleData(vi);
 
 @NgModule({
@@ -59,7 +61,9 @@ registerLocaleData(vi);
     AdminComponent,
     ProductListAdminComponent,
     ProductFeatureAdminComponent,
-    HomeAdminComponent
+    HomeAdminComponent,
+    AddProductComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,

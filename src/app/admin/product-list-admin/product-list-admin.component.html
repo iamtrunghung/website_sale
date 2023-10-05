@@ -36,10 +36,10 @@
                     <td>{{data.category}}</td>
                     <td>
                         <div class="button-act">
-                            <button class="button-edit">
+                            <button class="button-edit" (click)="editProduct(data.id)">
                                 <i class="bi bi-pencil-square"></i>
                             </button>
-                            <button class="button-remove">
+                            <button class="button-remove" (click)="deleteProduct($event,data.id)">
                                 <i class="bi bi-trash"></i>
                             </button>
                         </div>
@@ -49,35 +49,10 @@
         </nz-table>
     </div>
 </div>
-<nz-modal [(nzVisible)]="isOpenForm" nzTitle="Adding product" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()"
-[nzWidth]="700" style="overflow-y: scroll;">
+<nz-modal [nzClosable]="false" [(nzVisible)]="isOpenForm" nzTitle="Adding product" [nzFooter]="null"
+[nzWidth]="700" [nzBodyStyle]="{'overflow-y': 'scroll'}">
     <ng-container *nzModalContent>
-        <form>
-            <div class="form-group">
-                <div class="form-control">
-                    <img src="https://phutungnhapkhauchinhhang.com/wp-content/uploads/2020/06/default-thumbnail.jpg" alt="" style="width: 100px;height: 100px;">
-                </div>
-                <div class="form-control">
-                    <p>Name</p>
-                    <input nz-input type="text" class="text-product">
-                </div>
-                <div class="form-control">
-                    <p>Price</p>
-                    <input nz-input type="text" class="text-product">
-                </div>
-                <div class="form-control">
-                    <p>Unit</p>
-                    <input nz-input type="text" class="text-product">
-                </div>
-                <div class="form-control">
-                    <p>Category</p>
-                    <input nz-input type="text" class="text-product">
-                </div>
-            </div>
-            <div class="form-control">
-                <p>Description</p>
-                <ckeditor ></ckeditor>
-            </div>
-        </form>
+        <app-add-product *ngIf="isFormAdd" (isCloseModal)="closeModalAdd($event)" (isCallAgain)="isCallAgainData($event)"></app-add-product>
+        <app-edit-product *ngIf="isFormEdit" [idProduct]="idProductToEdit" (isCloseModal)="closeModalAdd($event)" (isCallAgain)="isCallAgainData($event)"></app-edit-product>
     </ng-container>
 </nz-modal>

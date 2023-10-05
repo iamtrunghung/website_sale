@@ -20,7 +20,9 @@ export class RelateProductComponent implements OnInit {
     this.getProductsRelate();
   }
   getProductsRelate(){
-    this.productsRelate = this.productService.getProducts().filter((item: any)=>item.category === this.product.category && item.id !== this.product.id);
+    this.productService.getProducts().subscribe((result: any)=>{
+      this.productsRelate =  result.filter((item: any)=>item.category === this.product.category && Number(item.id) !== Number(this.product.id));
+    })
   }
   viewDetailProduct(product: any){
     this.router.navigate(['/product-detail'],{state: {

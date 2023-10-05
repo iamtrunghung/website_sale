@@ -1,0 +1,50 @@
+form{
+    overflow-y: scroll;
+}
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.form-control {
+    flex-basis: 48%;
+    padding: 0 10px;
+    margin-bottom: 25px;
+    border: none !important;
+
+    .text-form {
+        margin: 0;
+    }
+
+    .control-image {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+.button-action {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+    .button-ok {
+        border: 1px solid white;
+        padding: 6px 15px;
+        background: #36b4f3;
+        color: white;
+        border-radius: 3px;
+        outline: none;
+    }
+    .button-cancel{
+        border: 1px solid #36b4f3;
+        padding: 6px 15px;
+        background: white;
+        color: #36b4f3;
+        border-radius: 3px;
+        outline: none;
+    }
+}
