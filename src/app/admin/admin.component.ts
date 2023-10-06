@@ -7,17 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
   isShowProductList: boolean = false;
-  isShowProductFeature: boolean = false;
+  isShowInvoice: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
   }
   goToProductList(){
     this.isShowProductList = true;
-    this.isShowProductFeature = false;
+    this.isShowInvoice = false;
   }
-  goToProductFeature(){
-    this.isShowProductFeature = true;
+  goToInvoice(){
+    this.isShowInvoice = true;
     this.isShowProductList = false;
   }
 }

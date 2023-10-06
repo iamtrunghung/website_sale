@@ -7,11 +7,13 @@ import { ProductsService } from 'src/app/component/services/products.service';
 })
 export class ProductListAdminComponent implements OnInit {
   productList: any = [];
+  listProductFiltered: any = [];
   isOpenForm: boolean = false;
   isFormAdd: boolean = false;
   isFormEdit: boolean = false;
   callAgain: boolean = false;
   idProductToEdit: number = 0;
+  keySearch: string = '';
   constructor(
     private productService: ProductsService
   ) {
@@ -29,8 +31,15 @@ export class ProductListAdminComponent implements OnInit {
   }
   getProducts() {
     this.productService.getProducts().subscribe((result: any)=>{
-      this.productList = result;
+      this.productList = this.listProductFiltered = result;
     });
+  }
+  handleSearch(key: any){
+    if(key == ''){
+      this.productList = this.listProductFiltered;
+    }else{
+      this.productList = this.listProductFiltered.filter((item: any)=> item.name.toLowerCase().includes(key.toLowerCase()));
+    }
   }
   openFormAdd() {
     this.isOpenForm = true;

@@ -33,11 +33,10 @@ import { provideStorage, getStorage } from '@angular/fire/storage';
 import { environment } from 'src/environments/environment';
 import { AdminComponent } from './admin/admin.component';
 import { ProductListAdminComponent } from './admin/product-list-admin/product-list-admin.component';
-import { ProductFeatureAdminComponent } from './admin/product-feature-admin/product-feature-admin.component';
-import { HomeAdminComponent } from './admin/home-admin/home-admin.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { AddProductComponent } from './admin/product-list-admin/add-product/add-product.component';
 import { EditProductComponent } from './admin/product-list-admin/edit-product/edit-product.component';
+import { PurchaseOrderComponent } from './admin/purchase-order-admin/purchase-order.component';
 registerLocaleData(vi);
 
 @NgModule({
@@ -60,10 +59,9 @@ registerLocaleData(vi);
     CheckoutComponent,
     AdminComponent,
     ProductListAdminComponent,
-    ProductFeatureAdminComponent,
-    HomeAdminComponent,
     AddProductComponent,
-    EditProductComponent
+    EditProductComponent,
+    PurchaseOrderComponent
   ],
   imports: [
     BrowserModule,

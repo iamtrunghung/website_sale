@@ -3,7 +3,7 @@
         <h3 class="heading-title">Product list</h3>
         <div class="heading-search">
             <nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton" style="width: 50%;">
-                <input type="text" nz-input placeholder="search product..." />
+                <input type="text" nz-input placeholder="search product..." [(ngModel)]="keySearch" (ngModelChange)="handleSearch(keySearch)"/>
             </nz-input-group>
             <ng-template #suffixIconButton>
                 <button nz-button nzType="primary" nzSearch><span nz-icon nzType="search"></span></button>

@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class CheckoutComponent implements OnInit {
   items: any = [];
+  listOrder:any = []
   formOrder!: FormGroup;
   constructor(
     private cart: CartService,
@@ -23,6 +24,7 @@ export class CheckoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCartItem();
+    this.getOrder();
   }
   initFormOrder(fb: any) {
     this.formOrder = fb.group({
@@ -34,6 +36,9 @@ export class CheckoutComponent implements OnInit {
   }
   getCartItem() {
     this.items = this.cart.loadCart();
+  }
+  getOrder(){
+    this.listOrder = JSON.parse(localStorage.getItem('order') || '[]');
   }
   calculateTotal() {
     return this.items.reduce((value: any, currentValue: any) => {
@@ -54,10 +59,11 @@ export class CheckoutComponent implements OnInit {
       user: valueUser,
       order: order_detail,
       total_bill: total_detail,
-      status: 'pendind',
+      status: 'Pending',
       create_at: new Date()
     }
-    localStorage.setItem('order', JSON.stringify(data_order));
+    this.listOrder.push(data_order)
+    localStorage.setItem('order', JSON.stringify(this.listOrder));
     this.message.success('Order Success !!!');
     this.formOrder.reset();
     setTimeout(() => {

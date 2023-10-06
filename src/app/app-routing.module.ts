@@ -11,8 +11,7 @@ import { LoginComponent } from './component/header/login/login.component';
 import { CheckoutComponent } from './component/checkout/checkout.component';
 import { AdminComponent } from './admin/admin.component';
 import { ProductListAdminComponent } from './admin/product-list-admin/product-list-admin.component';
-import { ProductFeatureAdminComponent } from './admin/product-feature-admin/product-feature-admin.component';
-import { HomeAdminComponent } from './admin/home-admin/home-admin.component';
+import { PurchaseOrderComponent } from './admin/purchase-order-admin/purchase-order.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/', pathMatch: 'full' },
@@ -58,17 +57,13 @@ const routes: Routes = [
     component: AdminComponent
   },
   {
-    path: 'admin/home',
-    component: HomeAdminComponent
-  },
-  {
     path: 'product-list',
     component: ProductListAdminComponent
   },
   {
-    path: 'product-feature',
-    component: ProductFeatureAdminComponent
-  },
+    path: 'purchase-order',
+    component: PurchaseOrderComponent
+  }
 ];
 
 

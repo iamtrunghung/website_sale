@@ -1,0 +1,90 @@
+<div class="wrapper">
+    <div class="header">
+        <h3 class="heading-title">Invoice list</h3>
+    </div>
+    <div class="main">
+        <nz-table #basicTable [nzData]="invoiceList" style="height: 100%;">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Id_bill</th>
+                    <th>Customer</th>
+                    <th>Status</th>
+                    <th>Payment</th>
+                    <th>Total Price</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of invoiceList;let i = index">
+                    <td>{{data.create_at | date: 'dd/MM/yyyy'}}</td>
+                    <td>{{data.id_bill}}</td>
+                    <td>{{data.user.name}}</td>
+                    <td>
+                        <nz-select [(ngModel)]="data.status" style="width: 150px;" (ngModelChange)="onChange($event, data)">
+                            <nz-option *ngFor="let status of orderStatus" [nzValue]="status" [nzLabel]="status"></nz-option>
+                        </nz-select>
+                    </td>
+                    <td>Cash payment</td>
+                    <td>${{data.total_bill}}</td>
+                    <td>
+                        <button nz-button nzType="primary" class="button-detail" (click)="viewDetail(data.id_bill)">View
+                            detail</button>
+                    </td>
+                </tr>
+            </tbody>
+        </nz-table>
+    </div>
+</div>
+<nz-modal [nzClosable]="false" [(nzVisible)]="isOpenDetail" [nzTitle]="header" (nzOnCancel)="handleCancel()"
+    (nzOnOk)="handleOk()" [nzWidth]="600">
+    <ng-container *nzModalContent>
+        <div class="elementor-container" *ngFor="let detail of detailInvoice">
+            <div class="elementor-customer">
+                <p class="info-customer">Id_bill: {{detail.id_bill}}</p>
+                <p class="info-customer">Customer's name: {{detail.user.name}}</p>
+                <p class="info-customer">Phone: {{detail.user.phone}}</p>
+                <p class="info-customer">Address: {{detail.user.address}}</p>
+                <p class="info-customer">Note: {{detail.user.orders}}</p>
+                <p class="info-customer">Date: {{detail.create_at | date: 'dd/MM/yyyy'}}</p>
+            </div>
+            <hr>
+            <div class="elementor-widget-product">
+                <nz-table #basicTable [nzData]="detail.order" style="height: 100%;" [nzShowPagination]="false">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Items</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Total Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of basicTable.data;let i = index">
+                            <td>
+                                <img [src]="data.image" [alt]="data.name" style="width: 50px;height: 50px;">
+                            </td>
+                            <td>{{data.name}}</td>
+                            <td [nzAlign]="'center'">{{data.quantity}}</td>
+                            <td>${{data.price}}</td>
+                            <td [nzAlign]="'center'">${{data.price * data.quantity}}</td>
+                        </tr>
+                    </tbody>
+                </nz-table>
+                <p class="text-total"
+                    style="text-align: right;padding: 5px 20px 0;font-weight: 500;font-size: 17px;color: #74A84A;">
+                    Total:
+                    ${{detail.total_bill}}</p>
+            </div>
+        </div>
+    </ng-container>
+    <ng-template #header>
+        <div class="header-modal">
+            <p class="title" style="margin: 0;">Detail invoice</p>
+            <button style="display: flex;align-items: center;padding: 10px;background: #74A84A;
+                color: white;border: none;outline: none;border-radius: 3px;" (click)="printBill()"><span nz-icon
+                    nzType="printer" nzTheme="outline"></span></button>
+        </div>
+    </ng-template>
+</nz-modal>

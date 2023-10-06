@@ -31,7 +31,6 @@ export class ShopComponent implements OnInit {
   getProducts() {
      this.product.getProducts().subscribe((result)=>{
       this.products = this.searchProducts = result;
-      console.log('products',this.products);
     });
   }
   handleSearchProduct(key: any){
@@ -42,7 +41,7 @@ export class ShopComponent implements OnInit {
     }
   }
   handleSearchPrice(price: any){
-    this.products = this.products.filter((product: any) => product.price > price[0] && product.price <= price[1]);
+    this.products = this.searchProducts.filter((product: any) => product.price > price[0] && product.price <= price[1]);
   }
   handleSortProduct(optionSelected: any){
     switch (optionSelected) {

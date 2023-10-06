@@ -23,7 +23,6 @@ export class DetailProductComponent implements OnInit {
     const routeParams = this.route.snapshot.paramMap;
     const productIdFromRoute = Number(routeParams.get('idProduct'));
      this.productService.getProducts().subscribe((result: any)=>{
-      console.log('result',result);
       this.product = result.find((product: any) => Number(product.id) === productIdFromRoute)
     })
   }

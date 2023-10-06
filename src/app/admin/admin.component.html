@@ -13,16 +13,18 @@
         <li nz-submenu nzTitle="Products">
             <ul>
               <li nz-menu-item (click)="goToProductList()">Product list</li>
-              <li nz-menu-item (click)="goToProductFeature()">Product feature</li>
             </ul>
         </li>
-        <li nz-submenu nzTitle="Purchase Order">
+        <li nz-submenu nzTitle="Invoice">
+            <ul>
+              <li nz-menu-item (click)="goToInvoice()">PurChase order</li>
+            </ul>
         </li>
       </ul>
     </div>
     <div class="sidebar-primary">
-      <app-product-list-admin *ngIf="!isShowProductFeature"></app-product-list-admin>
-      <app-product-feature-admin *ngIf="isShowProductFeature"></app-product-feature-admin>
+      <app-product-list-admin *ngIf="!isShowInvoice"></app-product-list-admin>
+      <app-purchase-order *ngIf="isShowInvoice"></app-purchase-order>
     </div>
   </div>
 </div>
