@@ -21,7 +21,7 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'gioi-thieu',
+    path: 'about',
     component: AboutComponent
   },
   {
@@ -37,7 +37,7 @@ const routes: Routes = [
     component: CartComponent
   },
   {
-    path: 'lien-he',
+    path: 'contact',
     component: ContactComponent
   },
   {
